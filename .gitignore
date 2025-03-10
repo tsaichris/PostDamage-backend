@@ -1,0 +1,21 @@
+# Ignore Models
+Models/
+
+# Ignore test file
+modelTest/
+modelTest.sh
+Model_pipeLine.py
+
+# Ignore logs
+logs/
+ngrok.log
+test.log
+
+# Ignore images data
+decoded_images/
+uploads/
+
+#Ignore keys
+—
+cert.pem
+key.pem

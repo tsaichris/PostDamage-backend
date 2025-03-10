@@ -1,0 +1,5 @@
+nohup: ignoring input
+  File "/home/ubuntu/backend/app_json.py", line 214
+    return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS        <div class = "content-section image-card"> <!-- inheritancc and nesting flex object-->
+                                                                                                    ^^^^^
+SyntaxError: invalid syntax
