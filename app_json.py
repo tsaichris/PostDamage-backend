@@ -450,7 +450,7 @@ from bson import ObjectId
 
 # app = Flask(__name__)
 
-BASE_PATH = "/home/yuio7012/app_temp/backend/resultpage"
+BASE_PATH = "/home/ubuntu/backend/resultpage/"
 
 @app.route("/results/check_overall/<string:userid>", methods=['POST', 'GET'])
 def check_overall(userid):

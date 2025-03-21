@@ -10,6 +10,7 @@ from PIL import Image
 
 
 def crack_segmentation(cropped_img, model):
+    device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
     # Fixed parameters
     threshold = 0.2
 
@@ -24,7 +25,8 @@ def crack_segmentation(cropped_img, model):
 
         img_1 = cv.resize(img, (input_width, input_height), cv.INTER_AREA)
         X = train_tfms(Image.fromarray(img_1))
-        X = Variable(X.unsqueeze(0)).cuda()  # [N, 1, H, W]
+        X = Variable(X.unsqueeze(0)).to(device)
+        #X = Variable(X.unsqueeze(0)).cuda()  # [N, 1, H, W]
 
         mask = model(X)
 
