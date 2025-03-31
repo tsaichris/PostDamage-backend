@@ -302,6 +302,7 @@ def DamageDetection(img,image_cv, model_detection,model_crackClassification,dete
 
     #model = YOLO('runs/detect/9e/weights/best.pt')
     #img = cv2.imread("datasets/test/images/cracking217_jpg.rf.03ff1acc26afb21d3be1f1eed68f5c0c.jpg")
+    print(f"orginal image size{img.size}")
     results = model_detection(img, conf = 0.2)
 
     boxes = results[0].boxes
@@ -344,9 +345,13 @@ def DamageDetection(img,image_cv, model_detection,model_crackClassification,dete
                         (x1, y1 + 10), cv2.FONT_HERSHEY_COMPLEX, 1, (255, 0, 0), 1)
             if CE:
                 # cost estimation for this cropped crack image
+                size = cropped_image.shape
+                print(f"original size: {cropped_image.shape}")
                 patch_result, full_result = crack_segmentation(cropped_img,model_crackSeg)
                 result_crack_seg = (full_result * 255).astype(np.uint8)
                 cv2.imwrite(f'./resultImages/crackSeg{boxIndex}.jpg', result_crack_seg)
+                result_crack_seg = cv2.resize(result_crack_seg, size)
+                print(f"re-size: {result_crack_seg.shape}")
                 white = count_white_pixels(result_crack_seg)
 
                 # cost for crack
@@ -385,8 +390,12 @@ def DamageDetection(img,image_cv, model_detection,model_crackClassification,dete
             cv2.imwrite(f'./resultImages/originalCropped{boxIndex}.jpg', cropped_image)
             if CE:
                 # cost estimation for this cropped spalling image
+                size = cropped_image.shape
+                print(f"original size: {cropped_image.shape}")
                 result_spalling_seg = Infer_spallingSeg(model_spallingSeg, cropped_img)
                 cv2.imwrite(f'./resultImages/spallingSeg{boxIndex}.jpg', result_spalling_seg)
+                result_spalling_seg = cv2.resize(result_spalling_seg, size)
+                print(f"re-size: {result_crack_seg.shape}")
                 white = count_white_pixels(result_spalling_seg)
                 total_cost_spalling += white * ratio* cost_spalling / 32400 # 每坪32400 cm^2
             
