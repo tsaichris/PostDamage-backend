@@ -8,7 +8,7 @@ import traceback
 # MongoDB connection setup
 client = MongoClient("mongodb://localhost:27017")  # Adjust the MongoDB URI as needed
 
-output_folder = "decoded_images"
+output_folder = "decoded_images_0225"
 os.makedirs(output_folder, exist_ok=True)
 # List of collections to process in each database
 collection_names = ['wall', 'beam', 'column']

@@ -1,5 +1,953 @@
-nohup: ignoring input
-  File "/home/ubuntu/backend/app_json.py", line 214
-    return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS        <div class = "content-section image-card"> <!-- inheritancc and nesting flex object-->
-                                                                                                    ^^^^^
-SyntaxError: invalid syntax
+WARNING ⚠️ Python>=3.10 is required, but Python==3.9.19 is currently installed 
+/home/ubuntu/miniconda3/envs/vit2/lib/python3.9/site-packages/albumentations/__init__.py:24: UserWarning: A new version of Albumentations is available: '2.0.5' (you have '2.0.0'). Upgrade using: pip install -U albumentations. To disable automatic update checks, set the environment variable NO_ALBUMENTATIONS_UPDATE to 1.
+  check_for_updates()
+/home/ubuntu/miniconda3/envs/vit2/lib/python3.9/site-packages/torch/distributed/distributed_c10d.py:366: UserWarning: torch.distributed.reduce_op is deprecated, please use torch.distributed.ReduceOp instead
+  warnings.warn(
+/home/ubuntu/backend/app_json.py:34: MonkeyPatchWarning: Monkey-patching ssl after ssl has already been imported may lead to errors, including RecursionError on Python 3.6. It may also silently lead to incorrect behaviour on Python 3.7. Please monkey-patch earlier. See https://github.com/gevent/gevent/issues/1016. Modules that had direct imports (NOT patched): ['urllib3.util.ssl_ (/home/ubuntu/miniconda3/envs/vit2/lib/python3.9/site-packages/urllib3/util/ssl_.py)', 'urllib3.util (/home/ubuntu/miniconda3/envs/vit2/lib/python3.9/site-packages/urllib3/util/__init__.py)', 'pymongo.ssl_context (/home/ubuntu/miniconda3/envs/vit2/lib/python3.9/site-packages/pymongo/ssl_context.py)']. 
+  monkey.patch_all()
+[2025-03-10 09:29:38,634] INFO in app_json: Attempting to load damage classification Model from Models/damageClassify/wall/
+2025-03-10 09:29:38,634 INFO: Attempting to load damage classification Model from Models/damageClassify/wall/ [in /home/ubuntu/backend/app_json.py:162]
+[2025-03-10 09:29:39,605] INFO in app_json: damage classification Model loaded successfully
+2025-03-10 09:29:39,605 INFO: damage classification Model loaded successfully [in /home/ubuntu/backend/app_json.py:164]
+[2025-03-10 09:29:39,605] INFO in app_json: Attempting to load damage classification Model from Models/damageClassify/column/
+2025-03-10 09:29:39,605 INFO: Attempting to load damage classification Model from Models/damageClassify/column/ [in /home/ubuntu/backend/app_json.py:162]
+[2025-03-10 09:29:40,537] INFO in app_json: damage classification Model loaded successfully
+2025-03-10 09:29:40,537 INFO: damage classification Model loaded successfully [in /home/ubuntu/backend/app_json.py:164]
+[2025-03-10 09:29:40,537] INFO in app_json: Attempting to load damage classification Model from Models/damageClassify/beam/
+2025-03-10 09:29:40,537 INFO: Attempting to load damage classification Model from Models/damageClassify/beam/ [in /home/ubuntu/backend/app_json.py:162]
+[2025-03-10 09:29:41,379] INFO in app_json: damage classification Model loaded successfully
+2025-03-10 09:29:41,379 INFO: damage classification Model loaded successfully [in /home/ubuntu/backend/app_json.py:164]
+[2025-03-10 09:29:41,380] INFO in app_json: Attempting to load crack classification Model from Models/crackClassify/wall/
+2025-03-10 09:29:41,380 INFO: Attempting to load crack classification Model from Models/crackClassify/wall/ [in /home/ubuntu/backend/app_json.py:177]
+[2025-03-10 09:29:42,226] INFO in app_json: Crack classification Model loaded successfully
+2025-03-10 09:29:42,226 INFO: Crack classification Model loaded successfully [in /home/ubuntu/backend/app_json.py:179]
+[2025-03-10 09:29:42,226] INFO in app_json: Attempting to load crack classification Model from Models/crackClassify/column/
+2025-03-10 09:29:42,226 INFO: Attempting to load crack classification Model from Models/crackClassify/column/ [in /home/ubuntu/backend/app_json.py:177]
+[2025-03-10 09:29:43,069] INFO in app_json: Crack classification Model loaded successfully
+2025-03-10 09:29:43,069 INFO: Crack classification Model loaded successfully [in /home/ubuntu/backend/app_json.py:179]
+[2025-03-10 09:29:43,070] INFO in app_json: Attempting to load crack classification Model from Models/crackClassify/beam/
+2025-03-10 09:29:43,070 INFO: Attempting to load crack classification Model from Models/crackClassify/beam/ [in /home/ubuntu/backend/app_json.py:177]
+[2025-03-10 09:29:43,909] INFO in app_json: Crack classification Model loaded successfully
+2025-03-10 09:29:43,909 INFO: Crack classification Model loaded successfully [in /home/ubuntu/backend/app_json.py:179]
+[2025-03-10 09:29:43,909] INFO in app_json: Attempting to load crack segmentation Model from Models/crackSeg.pt
+2025-03-10 09:29:43,909 INFO: Attempting to load crack segmentation Model from Models/crackSeg.pt [in /home/ubuntu/backend/app_json.py:189]
+/home/ubuntu/miniconda3/envs/vit2/lib/python3.9/site-packages/torchvision/models/_utils.py:208: UserWarning: The parameter 'pretrained' is deprecated since 0.13 and may be removed in the future, please use 'weights' instead.
+  warnings.warn(
+/home/ubuntu/miniconda3/envs/vit2/lib/python3.9/site-packages/torchvision/models/_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and may be removed in the future. The current behavior is equivalent to passing `weights=VGG16_Weights.IMAGENET1K_V1`. You can also use `weights=VGG16_Weights.DEFAULT` to get the most up-to-date weights.
+  warnings.warn(msg)
+[2025-03-10 09:29:45,328] INFO in app_json: Crack segmentation Model loaded successfully
+2025-03-10 09:29:45,328 INFO: Crack segmentation Model loaded successfully [in /home/ubuntu/backend/app_json.py:191]
+[2025-03-10 09:29:45,328] INFO in app_json: Attempting to load spalling segmentation Model from Models/spallingSeg.pt
+2025-03-10 09:29:45,328 INFO: Attempting to load spalling segmentation Model from Models/spallingSeg.pt [in /home/ubuntu/backend/app_json.py:197]
+[2025-03-10 09:29:46,227] INFO in app_json: spalling segmentation Model loaded successfully
+2025-03-10 09:29:46,227 INFO: spalling segmentation Model loaded successfully [in /home/ubuntu/backend/app_json.py:216]
+[2025-03-10 09:30:00,922] INFO in app_json: Starting secure server on port 443...
+2025-03-10 09:30:00,922 INFO: Starting secure server on port 443... [in /home/ubuntu/backend/app_json.py:854]
+[2025-03-10 09:30:17,870] INFO in app_json: Received userid (db_name): XfVtPvLHiuj0fOnz
+2025-03-10 09:30:17,870 INFO: Received userid (db_name): XfVtPvLHiuj0fOnz [in /home/ubuntu/backend/app_json.py:458]
+[2025-03-10 09:30:18,040] INFO in pywsgi: 127.0.0.1 - - [2025-03-10 09:30:18] "POST //results/check_overall/XfVtPvLHiuj0fOnz HTTP/1.1" 200 2781493 0.170096
+2025-03-10 09:30:18,040 INFO: 127.0.0.1 - - [2025-03-10 09:30:18] "POST //results/check_overall/XfVtPvLHiuj0fOnz HTTP/1.1" 200 2781493 0.170096 [in /home/ubuntu/miniconda3/envs/vit2/lib/python3.9/site-packages/gevent/pywsgi.py:1349]
+[2025-03-10 10:04:07,289] INFO in pywsgi: 127.0.0.1 - - [2025-03-10 10:04:07] "OPTIONS /get_user_id HTTP/1.1" 200 334 0.000715
+2025-03-10 10:04:07,289 INFO: 127.0.0.1 - - [2025-03-10 10:04:07] "OPTIONS /get_user_id HTTP/1.1" 200 334 0.000715 [in /home/ubuntu/miniconda3/envs/vit2/lib/python3.9/site-packages/gevent/pywsgi.py:1349]
+[2025-03-10 10:04:07,290] INFO in pywsgi: 127.0.0.1 - - [2025-03-10 10:04:07] "OPTIONS /get_user_id HTTP/1.1" 200 334 0.000383
+2025-03-10 10:04:07,290 INFO: 127.0.0.1 - - [2025-03-10 10:04:07] "OPTIONS /get_user_id HTTP/1.1" 200 334 0.000383 [in /home/ubuntu/miniconda3/envs/vit2/lib/python3.9/site-packages/gevent/pywsgi.py:1349]
+[2025-03-10 10:04:07,371] INFO in pywsgi: 127.0.0.1 - - [2025-03-10 10:04:07] "GET /get_user_id HTTP/1.1" 200 209 0.000642
+2025-03-10 10:04:07,371 INFO: 127.0.0.1 - - [2025-03-10 10:04:07] "GET /get_user_id HTTP/1.1" 200 209 0.000642 [in /home/ubuntu/miniconda3/envs/vit2/lib/python3.9/site-packages/gevent/pywsgi.py:1349]
+[2025-03-10 10:04:07,411] INFO in pywsgi: 127.0.0.1 - - [2025-03-10 10:04:07] "GET /get_user_id HTTP/1.1" 200 209 0.000589
+2025-03-10 10:04:07,411 INFO: 127.0.0.1 - - [2025-03-10 10:04:07] "GET /get_user_id HTTP/1.1" 200 209 0.000589 [in /home/ubuntu/miniconda3/envs/vit2/lib/python3.9/site-packages/gevent/pywsgi.py:1349]
+[2025-03-10 10:04:20,337] INFO in pywsgi: 127.0.0.1 - - [2025-03-10 10:04:20] "OPTIONS /image HTTP/1.1" 200 340 0.000606
+2025-03-10 10:04:20,337 INFO: 127.0.0.1 - - [2025-03-10 10:04:20] "OPTIONS /image HTTP/1.1" 200 340 0.000606 [in /home/ubuntu/miniconda3/envs/vit2/lib/python3.9/site-packages/gevent/pywsgi.py:1349]
+[2025-03-10 10:04:20,377] INFO in app_json: Received POST request to /image
+2025-03-10 10:04:20,377 INFO: Received POST request to /image [in /home/ubuntu/backend/app_json.py:277]
+[2025-03-10 10:04:20,378] INFO in app_json: Request headers: Content-Type: multipart/form-data; boundary=----WebKitFormBoundaryneN26nHgWAsBupUa
+Content-Length: 137413
+Host: cbd6-54-249-94-192.ngrok-free.app
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36
+Accept: application/json
+Accept-Encoding: gzip, deflate, br, zstd
+Accept-Language: zh-TW,zh;q=0.9,ja;q=0.8,en-US;q=0.7,en;q=0.6
+Ngrok-Skip-Browser-Warning: true
+Origin: https://marcelab.caece.net
+Priority: u=1, i
+Referer: https://marcelab.caece.net/
+Sec-Ch-Ua: "Not(A:Brand";v="99", "Google Chrome";v="133", "Chromium";v="133"
+Sec-Ch-Ua-Mobile: ?0
+Sec-Ch-Ua-Platform: "Windows"
+Sec-Fetch-Dest: empty
+Sec-Fetch-Mode: cors
+Sec-Fetch-Site: cross-site
+X-Forwarded-For: 140.112.13.114
+X-Forwarded-Host: cbd6-54-249-94-192.ngrok-free.app
+X-Forwarded-Proto: https
+
+
+2025-03-10 10:04:20,378 INFO: Request headers: Content-Type: multipart/form-data; boundary=----WebKitFormBoundaryneN26nHgWAsBupUa
+Content-Length: 137413
+Host: cbd6-54-249-94-192.ngrok-free.app
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36
+Accept: application/json
+Accept-Encoding: gzip, deflate, br, zstd
+Accept-Language: zh-TW,zh;q=0.9,ja;q=0.8,en-US;q=0.7,en;q=0.6
+Ngrok-Skip-Browser-Warning: true
+Origin: https://marcelab.caece.net
+Priority: u=1, i
+Referer: https://marcelab.caece.net/
+Sec-Ch-Ua: "Not(A:Brand";v="99", "Google Chrome";v="133", "Chromium";v="133"
+Sec-Ch-Ua-Mobile: ?0
+Sec-Ch-Ua-Platform: "Windows"
+Sec-Fetch-Dest: empty
+Sec-Fetch-Mode: cors
+Sec-Fetch-Site: cross-site
+X-Forwarded-For: 140.112.13.114
+X-Forwarded-Host: cbd6-54-249-94-192.ngrok-free.app
+X-Forwarded-Proto: https
+
+ [in /home/ubuntu/backend/app_json.py:278]
+[2025-03-10 10:04:20,481] INFO in app_json: Request files: ImmutableMultiDict([('file', <FileStorage: 'photo_0.jpg' ('image/jpeg')>)])
+2025-03-10 10:04:20,481 INFO: Request files: ImmutableMultiDict([('file', <FileStorage: 'photo_0.jpg' ('image/jpeg')>)]) [in /home/ubuntu/backend/app_json.py:279]
+[2025-03-10 10:04:20,481] INFO in app_json: Request form: ImmutableMultiDict([('userId', 'RDEeumXLplpIca8a'), ('detectionType', 'wall'), ('CE_state', 'false')])
+2025-03-10 10:04:20,481 INFO: Request form: ImmutableMultiDict([('userId', 'RDEeumXLplpIca8a'), ('detectionType', 'wall'), ('CE_state', 'false')]) [in /home/ubuntu/backend/app_json.py:280]
+[2025-03-10 10:04:20,481] INFO in app_json: request:<Request 'https://cbd6-54-249-94-192.ngrok-free.app/image' [POST]>
+2025-03-10 10:04:20,481 INFO: request:<Request 'https://cbd6-54-249-94-192.ngrok-free.app/image' [POST]> [in /home/ubuntu/backend/app_json.py:285]
+[2025-03-10 10:04:20,481] INFO in app_json: file: <FileStorage: 'photo_0.jpg' ('image/jpeg')>
+2025-03-10 10:04:20,481 INFO: file: <FileStorage: 'photo_0.jpg' ('image/jpeg')> [in /home/ubuntu/backend/app_json.py:290]
+[2025-03-10 10:04:20,481] INFO in app_json: Ratio:0
+2025-03-10 10:04:20,481 INFO: Ratio:0 [in /home/ubuntu/backend/app_json.py:300]
+[2025-03-10 10:04:20,505] INFO in app_json: Created collection: column in database: RDEeumXLplpIca8a
+2025-03-10 10:04:20,505 INFO: Created collection: column in database: RDEeumXLplpIca8a [in /home/ubuntu/backend/app_json.py:314]
+[2025-03-10 10:04:20,527] INFO in app_json: Created collection: beam in database: RDEeumXLplpIca8a
+2025-03-10 10:04:20,527 INFO: Created collection: beam in database: RDEeumXLplpIca8a [in /home/ubuntu/backend/app_json.py:314]
+[2025-03-10 10:04:20,545] INFO in app_json: Created collection: wall in database: RDEeumXLplpIca8a
+2025-03-10 10:04:20,545 INFO: Created collection: wall in database: RDEeumXLplpIca8a [in /home/ubuntu/backend/app_json.py:314]
+[2025-03-10 10:04:20,563] INFO in app_json: Ratio:0
+2025-03-10 10:04:20,563 INFO: Ratio:0 [in /home/ubuntu/backend/app_json.py:336]
+[2025-03-10 10:04:20,563] INFO in app_json: costEstimation:False
+2025-03-10 10:04:20,563 INFO: costEstimation:False [in /home/ubuntu/backend/app_json.py:337]
+[2025-03-10 10:04:20,563] INFO in app_json: Performing image quality check
+2025-03-10 10:04:20,563 INFO: Performing image quality check [in /home/ubuntu/backend/app_json.py:338]
+[2025-03-10 10:04:20,924] INFO in app_json: test
+2025-03-10 10:04:20,924 INFO: test [in /home/ubuntu/backend/app_json.py:343]
+[2025-03-10 10:04:20,925] INFO in app_json: Performing damage classification
+2025-03-10 10:04:20,925 INFO: Performing damage classification [in /home/ubuntu/backend/app_json.py:348]
+[2025-03-10 10:04:21,161] INFO in app_json: Performing damage detection
+2025-03-10 10:04:21,161 INFO: Performing damage detection [in /home/ubuntu/backend/app_json.py:351]
+
+0: 640x640 3 Crackss, 3 Spallings, 2138.0ms
+Speed: 1.2ms preprocess, 2138.0ms inference, 2.0ms postprocess per image at shape (1, 3, 640, 640)
+Detected classes: ['Cracks', 'Spalling']
+classification result: ['Spalling', 'Horizontal', 'Spalling', 'Web', 'Spalling']
+[2025-03-10 10:04:25,125] INFO in app_json: Performing Reason check
+2025-03-10 10:04:25,125 INFO: Performing Reason check [in /home/ubuntu/backend/app_json.py:356]
+[2025-03-10 10:04:25,125] INFO in app_json: Model complete
+2025-03-10 10:04:25,125 INFO: Model complete [in /home/ubuntu/backend/app_json.py:358]
+[2025-03-10 10:04:25,191] INFO in app_json: Resizing detected image to 640x640
+2025-03-10 10:04:25,191 INFO: Resizing detected image to 640x640 [in /home/ubuntu/backend/app_json.py:365]
+[2025-03-10 10:04:25,206] INFO in app_json: Classification complete, storing result in database
+2025-03-10 10:04:25,206 INFO: Classification complete, storing result in database [in /home/ubuntu/backend/app_json.py:377]
+[2025-03-10 10:04:25,208] INFO in app_json: <Response 314 bytes [200 OK]>
+2025-03-10 10:04:25,208 INFO: <Response 314 bytes [200 OK]> [in /home/ubuntu/backend/app_json.py:420]
+[2025-03-10 10:04:25,208] INFO in pywsgi: 127.0.0.1 - - [2025-03-10 10:04:25] "POST /image HTTP/1.1" 200 455 4.831208
+2025-03-10 10:04:25,208 INFO: 127.0.0.1 - - [2025-03-10 10:04:25] "POST /image HTTP/1.1" 200 455 4.831208 [in /home/ubuntu/miniconda3/envs/vit2/lib/python3.9/site-packages/gevent/pywsgi.py:1349]
+[2025-03-10 10:04:35,572] INFO in pywsgi: 127.0.0.1 - - [2025-03-10 10:04:35] "OPTIONS /results/check_overall/RDEeumXLplpIca8a HTTP/1.1" 200 340 0.000709
+2025-03-10 10:04:35,572 INFO: 127.0.0.1 - - [2025-03-10 10:04:35] "OPTIONS /results/check_overall/RDEeumXLplpIca8a HTTP/1.1" 200 340 0.000709 [in /home/ubuntu/miniconda3/envs/vit2/lib/python3.9/site-packages/gevent/pywsgi.py:1349]
+[2025-03-10 10:04:35,611] INFO in app_json: Received userid (db_name): RDEeumXLplpIca8a
+2025-03-10 10:04:35,611 INFO: Received userid (db_name): RDEeumXLplpIca8a [in /home/ubuntu/backend/app_json.py:458]
+[2025-03-10 10:04:35,628] INFO in pywsgi: 127.0.0.1 - - [2025-03-10 10:04:35] "POST /results/check_overall/RDEeumXLplpIca8a HTTP/1.1" 200 2781493 0.016608
+2025-03-10 10:04:35,628 INFO: 127.0.0.1 - - [2025-03-10 10:04:35] "POST /results/check_overall/RDEeumXLplpIca8a HTTP/1.1" 200 2781493 0.016608 [in /home/ubuntu/miniconda3/envs/vit2/lib/python3.9/site-packages/gevent/pywsgi.py:1349]
+[2025-03-10 10:05:00,712] INFO in pywsgi: 127.0.0.1 - - [2025-03-10 10:05:00] "OPTIONS /get_user_id HTTP/1.1" 200 334 0.000582
+2025-03-10 10:05:00,712 INFO: 127.0.0.1 - - [2025-03-10 10:05:00] "OPTIONS /get_user_id HTTP/1.1" 200 334 0.000582 [in /home/ubuntu/miniconda3/envs/vit2/lib/python3.9/site-packages/gevent/pywsgi.py:1349]
+[2025-03-10 10:05:00,713] INFO in pywsgi: 127.0.0.1 - - [2025-03-10 10:05:00] "OPTIONS /get_user_id HTTP/1.1" 200 334 0.000361
+2025-03-10 10:05:00,713 INFO: 127.0.0.1 - - [2025-03-10 10:05:00] "OPTIONS /get_user_id HTTP/1.1" 200 334 0.000361 [in /home/ubuntu/miniconda3/envs/vit2/lib/python3.9/site-packages/gevent/pywsgi.py:1349]
+[2025-03-10 10:05:00,769] INFO in pywsgi: 127.0.0.1 - - [2025-03-10 10:05:00] "GET /get_user_id HTTP/1.1" 200 209 0.000588
+2025-03-10 10:05:00,769 INFO: 127.0.0.1 - - [2025-03-10 10:05:00] "GET /get_user_id HTTP/1.1" 200 209 0.000588 [in /home/ubuntu/miniconda3/envs/vit2/lib/python3.9/site-packages/gevent/pywsgi.py:1349]
+[2025-03-10 10:05:00,808] INFO in pywsgi: 127.0.0.1 - - [2025-03-10 10:05:00] "GET /get_user_id HTTP/1.1" 200 209 0.000573
+2025-03-10 10:05:00,808 INFO: 127.0.0.1 - - [2025-03-10 10:05:00] "GET /get_user_id HTTP/1.1" 200 209 0.000573 [in /home/ubuntu/miniconda3/envs/vit2/lib/python3.9/site-packages/gevent/pywsgi.py:1349]
+[2025-03-10 10:05:07,562] INFO in pywsgi: 127.0.0.1 - - [2025-03-10 10:05:07] "OPTIONS /get_user_id HTTP/1.1" 200 334 0.000613
+2025-03-10 10:05:07,562 INFO: 127.0.0.1 - - [2025-03-10 10:05:07] "OPTIONS /get_user_id HTTP/1.1" 200 334 0.000613 [in /home/ubuntu/miniconda3/envs/vit2/lib/python3.9/site-packages/gevent/pywsgi.py:1349]
+[2025-03-10 10:05:07,585] INFO in pywsgi: 127.0.0.1 - - [2025-03-10 10:05:07] "OPTIONS /get_user_id HTTP/1.1" 200 334 0.000591
+2025-03-10 10:05:07,585 INFO: 127.0.0.1 - - [2025-03-10 10:05:07] "OPTIONS /get_user_id HTTP/1.1" 200 334 0.000591 [in /home/ubuntu/miniconda3/envs/vit2/lib/python3.9/site-packages/gevent/pywsgi.py:1349]
+[2025-03-10 10:05:07,616] INFO in pywsgi: 127.0.0.1 - - [2025-03-10 10:05:07] "GET /get_user_id HTTP/1.1" 200 209 0.000563
+2025-03-10 10:05:07,616 INFO: 127.0.0.1 - - [2025-03-10 10:05:07] "GET /get_user_id HTTP/1.1" 200 209 0.000563 [in /home/ubuntu/miniconda3/envs/vit2/lib/python3.9/site-packages/gevent/pywsgi.py:1349]
+[2025-03-10 10:05:07,655] INFO in pywsgi: 127.0.0.1 - - [2025-03-10 10:05:07] "GET /get_user_id HTTP/1.1" 200 209 0.000546
+2025-03-10 10:05:07,655 INFO: 127.0.0.1 - - [2025-03-10 10:05:07] "GET /get_user_id HTTP/1.1" 200 209 0.000546 [in /home/ubuntu/miniconda3/envs/vit2/lib/python3.9/site-packages/gevent/pywsgi.py:1349]
+[2025-03-10 10:05:26,477] INFO in pywsgi: 127.0.0.1 - - [2025-03-10 10:05:26] "OPTIONS /get_user_id HTTP/1.1" 200 334 0.000535
+2025-03-10 10:05:26,477 INFO: 127.0.0.1 - - [2025-03-10 10:05:26] "OPTIONS /get_user_id HTTP/1.1" 200 334 0.000535 [in /home/ubuntu/miniconda3/envs/vit2/lib/python3.9/site-packages/gevent/pywsgi.py:1349]
+[2025-03-10 10:05:26,478] INFO in pywsgi: 127.0.0.1 - - [2025-03-10 10:05:26] "OPTIONS /get_user_id HTTP/1.1" 200 334 0.000533
+2025-03-10 10:05:26,478 INFO: 127.0.0.1 - - [2025-03-10 10:05:26] "OPTIONS /get_user_id HTTP/1.1" 200 334 0.000533 [in /home/ubuntu/miniconda3/envs/vit2/lib/python3.9/site-packages/gevent/pywsgi.py:1349]
+[2025-03-10 10:06:48,974] INFO in pywsgi: 127.0.0.1 - - [2025-03-10 10:06:48] "OPTIONS /get_user_id HTTP/1.1" 200 334 0.000986
+2025-03-10 10:06:48,974 INFO: 127.0.0.1 - - [2025-03-10 10:06:48] "OPTIONS /get_user_id HTTP/1.1" 200 334 0.000986 [in /home/ubuntu/miniconda3/envs/vit2/lib/python3.9/site-packages/gevent/pywsgi.py:1349]
+[2025-03-10 10:06:48,998] INFO in pywsgi: 127.0.0.1 - - [2025-03-10 10:06:48] "OPTIONS /get_user_id HTTP/1.1" 200 334 0.000590
+2025-03-10 10:06:48,998 INFO: 127.0.0.1 - - [2025-03-10 10:06:48] "OPTIONS /get_user_id HTTP/1.1" 200 334 0.000590 [in /home/ubuntu/miniconda3/envs/vit2/lib/python3.9/site-packages/gevent/pywsgi.py:1349]
+[2025-03-10 10:06:49,014] INFO in pywsgi: 127.0.0.1 - - [2025-03-10 10:06:49] "GET /get_user_id HTTP/1.1" 200 209 0.000570
+2025-03-10 10:06:49,014 INFO: 127.0.0.1 - - [2025-03-10 10:06:49] "GET /get_user_id HTTP/1.1" 200 209 0.000570 [in /home/ubuntu/miniconda3/envs/vit2/lib/python3.9/site-packages/gevent/pywsgi.py:1349]
+[2025-03-10 10:06:49,053] INFO in pywsgi: 127.0.0.1 - - [2025-03-10 10:06:49] "GET /get_user_id HTTP/1.1" 200 209 0.000593
+2025-03-10 10:06:49,053 INFO: 127.0.0.1 - - [2025-03-10 10:06:49] "GET /get_user_id HTTP/1.1" 200 209 0.000593 [in /home/ubuntu/miniconda3/envs/vit2/lib/python3.9/site-packages/gevent/pywsgi.py:1349]
+[2025-03-10 10:06:58,054] INFO in pywsgi: 127.0.0.1 - - [2025-03-10 10:06:58] "OPTIONS /get_user_id HTTP/1.1" 200 334 0.000610
+2025-03-10 10:06:58,054 INFO: 127.0.0.1 - - [2025-03-10 10:06:58] "OPTIONS /get_user_id HTTP/1.1" 200 334 0.000610 [in /home/ubuntu/miniconda3/envs/vit2/lib/python3.9/site-packages/gevent/pywsgi.py:1349]
+[2025-03-10 10:06:58,055] INFO in pywsgi: 127.0.0.1 - - [2025-03-10 10:06:58] "OPTIONS /get_user_id HTTP/1.1" 200 334 0.000462
+2025-03-10 10:06:58,055 INFO: 127.0.0.1 - - [2025-03-10 10:06:58] "OPTIONS /get_user_id HTTP/1.1" 200 334 0.000462 [in /home/ubuntu/miniconda3/envs/vit2/lib/python3.9/site-packages/gevent/pywsgi.py:1349]
+[2025-03-10 10:06:58,119] INFO in pywsgi: 127.0.0.1 - - [2025-03-10 10:06:58] "GET /get_user_id HTTP/1.1" 200 209 0.000579
+2025-03-10 10:06:58,119 INFO: 127.0.0.1 - - [2025-03-10 10:06:58] "GET /get_user_id HTTP/1.1" 200 209 0.000579 [in /home/ubuntu/miniconda3/envs/vit2/lib/python3.9/site-packages/gevent/pywsgi.py:1349]
+[2025-03-10 10:06:58,160] INFO in pywsgi: 127.0.0.1 - - [2025-03-10 10:06:58] "GET /get_user_id HTTP/1.1" 200 209 0.000563
+2025-03-10 10:06:58,160 INFO: 127.0.0.1 - - [2025-03-10 10:06:58] "GET /get_user_id HTTP/1.1" 200 209 0.000563 [in /home/ubuntu/miniconda3/envs/vit2/lib/python3.9/site-packages/gevent/pywsgi.py:1349]
+[2025-03-10 10:07:07,706] INFO in pywsgi: 127.0.0.1 - - [2025-03-10 10:07:07] "OPTIONS /get_user_id HTTP/1.1" 200 334 0.000558
+2025-03-10 10:07:07,706 INFO: 127.0.0.1 - - [2025-03-10 10:07:07] "OPTIONS /get_user_id HTTP/1.1" 200 334 0.000558 [in /home/ubuntu/miniconda3/envs/vit2/lib/python3.9/site-packages/gevent/pywsgi.py:1349]
+[2025-03-10 10:07:07,721] INFO in pywsgi: 127.0.0.1 - - [2025-03-10 10:07:07] "OPTIONS /get_user_id HTTP/1.1" 200 334 0.000556
+2025-03-10 10:07:07,721 INFO: 127.0.0.1 - - [2025-03-10 10:07:07] "OPTIONS /get_user_id HTTP/1.1" 200 334 0.000556 [in /home/ubuntu/miniconda3/envs/vit2/lib/python3.9/site-packages/gevent/pywsgi.py:1349]
+[2025-03-10 10:07:07,750] INFO in pywsgi: 127.0.0.1 - - [2025-03-10 10:07:07] "GET /get_user_id HTTP/1.1" 200 209 0.000598
+2025-03-10 10:07:07,750 INFO: 127.0.0.1 - - [2025-03-10 10:07:07] "GET /get_user_id HTTP/1.1" 200 209 0.000598 [in /home/ubuntu/miniconda3/envs/vit2/lib/python3.9/site-packages/gevent/pywsgi.py:1349]
+[2025-03-10 10:07:07,793] INFO in pywsgi: 127.0.0.1 - - [2025-03-10 10:07:07] "GET /get_user_id HTTP/1.1" 200 209 0.000582
+2025-03-10 10:07:07,793 INFO: 127.0.0.1 - - [2025-03-10 10:07:07] "GET /get_user_id HTTP/1.1" 200 209 0.000582 [in /home/ubuntu/miniconda3/envs/vit2/lib/python3.9/site-packages/gevent/pywsgi.py:1349]
+[2025-03-10 10:07:13,312] INFO in pywsgi: 127.0.0.1 - - [2025-03-10 10:07:13] "OPTIONS /get_user_id HTTP/1.1" 200 334 0.000602
+2025-03-10 10:07:13,312 INFO: 127.0.0.1 - - [2025-03-10 10:07:13] "OPTIONS /get_user_id HTTP/1.1" 200 334 0.000602 [in /home/ubuntu/miniconda3/envs/vit2/lib/python3.9/site-packages/gevent/pywsgi.py:1349]
+[2025-03-10 10:07:13,329] INFO in pywsgi: 127.0.0.1 - - [2025-03-10 10:07:13] "OPTIONS /get_user_id HTTP/1.1" 200 334 0.000545
+2025-03-10 10:07:13,329 INFO: 127.0.0.1 - - [2025-03-10 10:07:13] "OPTIONS /get_user_id HTTP/1.1" 200 334 0.000545 [in /home/ubuntu/miniconda3/envs/vit2/lib/python3.9/site-packages/gevent/pywsgi.py:1349]
+[2025-03-10 10:07:13,359] INFO in pywsgi: 127.0.0.1 - - [2025-03-10 10:07:13] "GET /get_user_id HTTP/1.1" 200 209 0.000607
+2025-03-10 10:07:13,359 INFO: 127.0.0.1 - - [2025-03-10 10:07:13] "GET /get_user_id HTTP/1.1" 200 209 0.000607 [in /home/ubuntu/miniconda3/envs/vit2/lib/python3.9/site-packages/gevent/pywsgi.py:1349]
+[2025-03-10 10:07:13,400] INFO in pywsgi: 127.0.0.1 - - [2025-03-10 10:07:13] "GET /get_user_id HTTP/1.1" 200 209 0.000648
+2025-03-10 10:07:13,400 INFO: 127.0.0.1 - - [2025-03-10 10:07:13] "GET /get_user_id HTTP/1.1" 200 209 0.000648 [in /home/ubuntu/miniconda3/envs/vit2/lib/python3.9/site-packages/gevent/pywsgi.py:1349]
+[2025-03-10 10:07:16,117] INFO in pywsgi: 127.0.0.1 - - [2025-03-10 10:07:16] "GET /get_user_id HTTP/1.1" 200 209 0.000585
+2025-03-10 10:07:16,117 INFO: 127.0.0.1 - - [2025-03-10 10:07:16] "GET /get_user_id HTTP/1.1" 200 209 0.000585 [in /home/ubuntu/miniconda3/envs/vit2/lib/python3.9/site-packages/gevent/pywsgi.py:1349]
+[2025-03-10 10:07:16,160] INFO in pywsgi: 127.0.0.1 - - [2025-03-10 10:07:16] "GET /get_user_id HTTP/1.1" 200 209 0.000594
+2025-03-10 10:07:16,160 INFO: 127.0.0.1 - - [2025-03-10 10:07:16] "GET /get_user_id HTTP/1.1" 200 209 0.000594 [in /home/ubuntu/miniconda3/envs/vit2/lib/python3.9/site-packages/gevent/pywsgi.py:1349]
+[2025-03-10 10:07:28,390] INFO in pywsgi: 127.0.0.1 - - [2025-03-10 10:07:28] "OPTIONS /image HTTP/1.1" 200 340 0.000605
+2025-03-10 10:07:28,390 INFO: 127.0.0.1 - - [2025-03-10 10:07:28] "OPTIONS /image HTTP/1.1" 200 340 0.000605 [in /home/ubuntu/miniconda3/envs/vit2/lib/python3.9/site-packages/gevent/pywsgi.py:1349]
+[2025-03-10 10:07:28,432] INFO in app_json: Received POST request to /image
+2025-03-10 10:07:28,432 INFO: Received POST request to /image [in /home/ubuntu/backend/app_json.py:277]
+[2025-03-10 10:07:28,432] INFO in app_json: Request headers: Content-Type: multipart/form-data; boundary=----WebKitFormBoundaryPswCv9HJIobmQqwh
+Content-Length: 137413
+Host: cbd6-54-249-94-192.ngrok-free.app
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36
+Accept: application/json
+Accept-Encoding: gzip, deflate, br, zstd
+Accept-Language: zh-TW,zh;q=0.9,ja;q=0.8,en-US;q=0.7,en;q=0.6
+Ngrok-Skip-Browser-Warning: true
+Origin: https://marcelab.caece.net
+Priority: u=1, i
+Referer: https://marcelab.caece.net/
+Sec-Ch-Ua: "Not(A:Brand";v="99", "Google Chrome";v="133", "Chromium";v="133"
+Sec-Ch-Ua-Mobile: ?0
+Sec-Ch-Ua-Platform: "Windows"
+Sec-Fetch-Dest: empty
+Sec-Fetch-Mode: cors
+Sec-Fetch-Site: cross-site
+X-Forwarded-For: 140.112.13.114
+X-Forwarded-Host: cbd6-54-249-94-192.ngrok-free.app
+X-Forwarded-Proto: https
+
+
+2025-03-10 10:07:28,432 INFO: Request headers: Content-Type: multipart/form-data; boundary=----WebKitFormBoundaryPswCv9HJIobmQqwh
+Content-Length: 137413
+Host: cbd6-54-249-94-192.ngrok-free.app
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36
+Accept: application/json
+Accept-Encoding: gzip, deflate, br, zstd
+Accept-Language: zh-TW,zh;q=0.9,ja;q=0.8,en-US;q=0.7,en;q=0.6
+Ngrok-Skip-Browser-Warning: true
+Origin: https://marcelab.caece.net
+Priority: u=1, i
+Referer: https://marcelab.caece.net/
+Sec-Ch-Ua: "Not(A:Brand";v="99", "Google Chrome";v="133", "Chromium";v="133"
+Sec-Ch-Ua-Mobile: ?0
+Sec-Ch-Ua-Platform: "Windows"
+Sec-Fetch-Dest: empty
+Sec-Fetch-Mode: cors
+Sec-Fetch-Site: cross-site
+X-Forwarded-For: 140.112.13.114
+X-Forwarded-Host: cbd6-54-249-94-192.ngrok-free.app
+X-Forwarded-Proto: https
+
+ [in /home/ubuntu/backend/app_json.py:278]
+[2025-03-10 10:07:28,541] INFO in app_json: Request files: ImmutableMultiDict([('file', <FileStorage: 'photo_0.jpg' ('image/jpeg')>)])
+2025-03-10 10:07:28,541 INFO: Request files: ImmutableMultiDict([('file', <FileStorage: 'photo_0.jpg' ('image/jpeg')>)]) [in /home/ubuntu/backend/app_json.py:279]
+[2025-03-10 10:07:28,541] INFO in app_json: Request form: ImmutableMultiDict([('userId', 'qAxdTLMAAaAISuCe'), ('detectionType', 'wall'), ('CE_state', 'false')])
+2025-03-10 10:07:28,541 INFO: Request form: ImmutableMultiDict([('userId', 'qAxdTLMAAaAISuCe'), ('detectionType', 'wall'), ('CE_state', 'false')]) [in /home/ubuntu/backend/app_json.py:280]
+[2025-03-10 10:07:28,541] INFO in app_json: request:<Request 'https://cbd6-54-249-94-192.ngrok-free.app/image' [POST]>
+2025-03-10 10:07:28,541 INFO: request:<Request 'https://cbd6-54-249-94-192.ngrok-free.app/image' [POST]> [in /home/ubuntu/backend/app_json.py:285]
+[2025-03-10 10:07:28,541] INFO in app_json: file: <FileStorage: 'photo_0.jpg' ('image/jpeg')>
+2025-03-10 10:07:28,541 INFO: file: <FileStorage: 'photo_0.jpg' ('image/jpeg')> [in /home/ubuntu/backend/app_json.py:290]
+[2025-03-10 10:07:28,541] INFO in app_json: Ratio:0
+2025-03-10 10:07:28,541 INFO: Ratio:0 [in /home/ubuntu/backend/app_json.py:300]
+[2025-03-10 10:07:28,567] INFO in app_json: Created collection: column in database: qAxdTLMAAaAISuCe
+2025-03-10 10:07:28,567 INFO: Created collection: column in database: qAxdTLMAAaAISuCe [in /home/ubuntu/backend/app_json.py:314]
+[2025-03-10 10:07:28,593] INFO in app_json: Created collection: beam in database: qAxdTLMAAaAISuCe
+2025-03-10 10:07:28,593 INFO: Created collection: beam in database: qAxdTLMAAaAISuCe [in /home/ubuntu/backend/app_json.py:314]
+[2025-03-10 10:07:28,615] INFO in app_json: Created collection: wall in database: qAxdTLMAAaAISuCe
+2025-03-10 10:07:28,615 INFO: Created collection: wall in database: qAxdTLMAAaAISuCe [in /home/ubuntu/backend/app_json.py:314]
+[2025-03-10 10:07:28,630] INFO in app_json: Ratio:0
+2025-03-10 10:07:28,630 INFO: Ratio:0 [in /home/ubuntu/backend/app_json.py:336]
+[2025-03-10 10:07:28,630] INFO in app_json: costEstimation:False
+2025-03-10 10:07:28,630 INFO: costEstimation:False [in /home/ubuntu/backend/app_json.py:337]
+[2025-03-10 10:07:28,630] INFO in app_json: Performing image quality check
+2025-03-10 10:07:28,630 INFO: Performing image quality check [in /home/ubuntu/backend/app_json.py:338]
+[2025-03-10 10:07:28,854] INFO in app_json: test
+2025-03-10 10:07:28,854 INFO: test [in /home/ubuntu/backend/app_json.py:343]
+[2025-03-10 10:07:28,854] INFO in app_json: Performing damage classification
+2025-03-10 10:07:28,854 INFO: Performing damage classification [in /home/ubuntu/backend/app_json.py:348]
+[2025-03-10 10:07:29,131] INFO in app_json: Performing damage detection
+2025-03-10 10:07:29,131 INFO: Performing damage detection [in /home/ubuntu/backend/app_json.py:351]
+
+0: 640x640 3 Crackss, 3 Spallings, 2067.2ms
+Speed: 1.4ms preprocess, 2067.2ms inference, 0.7ms postprocess per image at shape (1, 3, 640, 640)
+Detected classes: ['Cracks', 'Spalling']
+classification result: ['Spalling', 'Horizontal', 'Spalling', 'Web', 'Spalling']
+[2025-03-10 10:07:32,122] INFO in app_json: Performing Reason check
+2025-03-10 10:07:32,122 INFO: Performing Reason check [in /home/ubuntu/backend/app_json.py:356]
+[2025-03-10 10:07:32,122] INFO in app_json: Model complete
+2025-03-10 10:07:32,122 INFO: Model complete [in /home/ubuntu/backend/app_json.py:358]
+[2025-03-10 10:07:32,186] INFO in app_json: Resizing detected image to 640x640
+2025-03-10 10:07:32,186 INFO: Resizing detected image to 640x640 [in /home/ubuntu/backend/app_json.py:365]
+[2025-03-10 10:07:32,201] INFO in app_json: Classification complete, storing result in database
+2025-03-10 10:07:32,201 INFO: Classification complete, storing result in database [in /home/ubuntu/backend/app_json.py:377]
+[2025-03-10 10:07:32,202] INFO in app_json: <Response 314 bytes [200 OK]>
+2025-03-10 10:07:32,202 INFO: <Response 314 bytes [200 OK]> [in /home/ubuntu/backend/app_json.py:420]
+[2025-03-10 10:07:32,202] INFO in pywsgi: 127.0.0.1 - - [2025-03-10 10:07:32] "POST /image HTTP/1.1" 200 455 3.770220
+2025-03-10 10:07:32,202 INFO: 127.0.0.1 - - [2025-03-10 10:07:32] "POST /image HTTP/1.1" 200 455 3.770220 [in /home/ubuntu/miniconda3/envs/vit2/lib/python3.9/site-packages/gevent/pywsgi.py:1349]
+[2025-03-10 10:07:38,200] INFO in pywsgi: 127.0.0.1 - - [2025-03-10 10:07:38] "OPTIONS /results/check_overall/qAxdTLMAAaAISuCe HTTP/1.1" 200 340 0.000678
+2025-03-10 10:07:38,200 INFO: 127.0.0.1 - - [2025-03-10 10:07:38] "OPTIONS /results/check_overall/qAxdTLMAAaAISuCe HTTP/1.1" 200 340 0.000678 [in /home/ubuntu/miniconda3/envs/vit2/lib/python3.9/site-packages/gevent/pywsgi.py:1349]
+[2025-03-10 10:07:38,246] INFO in app_json: Received userid (db_name): qAxdTLMAAaAISuCe
+2025-03-10 10:07:38,246 INFO: Received userid (db_name): qAxdTLMAAaAISuCe [in /home/ubuntu/backend/app_json.py:458]
+[2025-03-10 10:07:38,262] INFO in pywsgi: 127.0.0.1 - - [2025-03-10 10:07:38] "POST /results/check_overall/qAxdTLMAAaAISuCe HTTP/1.1" 200 2781493 0.016411
+2025-03-10 10:07:38,262 INFO: 127.0.0.1 - - [2025-03-10 10:07:38] "POST /results/check_overall/qAxdTLMAAaAISuCe HTTP/1.1" 200 2781493 0.016411 [in /home/ubuntu/miniconda3/envs/vit2/lib/python3.9/site-packages/gevent/pywsgi.py:1349]
+[2025-03-10 10:09:25,589] INFO in pywsgi: 127.0.0.1 - - [2025-03-10 10:09:25] "OPTIONS /get_user_id HTTP/1.1" 200 334 0.000553
+2025-03-10 10:09:25,589 INFO: 127.0.0.1 - - [2025-03-10 10:09:25] "OPTIONS /get_user_id HTTP/1.1" 200 334 0.000553 [in /home/ubuntu/miniconda3/envs/vit2/lib/python3.9/site-packages/gevent/pywsgi.py:1349]
+[2025-03-10 10:09:25,669] INFO in pywsgi: 127.0.0.1 - - [2025-03-10 10:09:25] "GET /get_user_id HTTP/1.1" 200 209 0.000595
+2025-03-10 10:09:25,669 INFO: 127.0.0.1 - - [2025-03-10 10:09:25] "GET /get_user_id HTTP/1.1" 200 209 0.000595 [in /home/ubuntu/miniconda3/envs/vit2/lib/python3.9/site-packages/gevent/pywsgi.py:1349]
+[2025-03-10 10:26:35,495] INFO in pywsgi: 127.0.0.1 - - [2025-03-10 10:26:35] "OPTIONS /get_user_id HTTP/1.1" 200 334 0.000569
+2025-03-10 10:26:35,495 INFO: 127.0.0.1 - - [2025-03-10 10:26:35] "OPTIONS /get_user_id HTTP/1.1" 200 334 0.000569 [in /home/ubuntu/miniconda3/envs/vit2/lib/python3.9/site-packages/gevent/pywsgi.py:1349]
+[2025-03-10 10:26:35,496] INFO in pywsgi: 127.0.0.1 - - [2025-03-10 10:26:35] "OPTIONS /get_user_id HTTP/1.1" 200 334 0.000374
+2025-03-10 10:26:35,496 INFO: 127.0.0.1 - - [2025-03-10 10:26:35] "OPTIONS /get_user_id HTTP/1.1" 200 334 0.000374 [in /home/ubuntu/miniconda3/envs/vit2/lib/python3.9/site-packages/gevent/pywsgi.py:1349]
+[2025-03-10 10:26:35,576] INFO in pywsgi: 127.0.0.1 - - [2025-03-10 10:26:35] "GET /get_user_id HTTP/1.1" 200 209 0.000569
+2025-03-10 10:26:35,576 INFO: 127.0.0.1 - - [2025-03-10 10:26:35] "GET /get_user_id HTTP/1.1" 200 209 0.000569 [in /home/ubuntu/miniconda3/envs/vit2/lib/python3.9/site-packages/gevent/pywsgi.py:1349]
+[2025-03-10 10:26:35,616] INFO in pywsgi: 127.0.0.1 - - [2025-03-10 10:26:35] "GET /get_user_id HTTP/1.1" 200 209 0.000566
+2025-03-10 10:26:35,616 INFO: 127.0.0.1 - - [2025-03-10 10:26:35] "GET /get_user_id HTTP/1.1" 200 209 0.000566 [in /home/ubuntu/miniconda3/envs/vit2/lib/python3.9/site-packages/gevent/pywsgi.py:1349]
+[2025-03-10 10:27:49,070] INFO in pywsgi: 127.0.0.1 - - [2025-03-10 10:27:49] "OPTIONS /get_user_id HTTP/1.1" 200 334 0.000581
+2025-03-10 10:27:49,070 INFO: 127.0.0.1 - - [2025-03-10 10:27:49] "OPTIONS /get_user_id HTTP/1.1" 200 334 0.000581 [in /home/ubuntu/miniconda3/envs/vit2/lib/python3.9/site-packages/gevent/pywsgi.py:1349]
+[2025-03-10 10:27:49,079] INFO in pywsgi: 127.0.0.1 - - [2025-03-10 10:27:49] "OPTIONS /get_user_id HTTP/1.1" 200 334 0.000991
+2025-03-10 10:27:49,079 INFO: 127.0.0.1 - - [2025-03-10 10:27:49] "OPTIONS /get_user_id HTTP/1.1" 200 334 0.000991 [in /home/ubuntu/miniconda3/envs/vit2/lib/python3.9/site-packages/gevent/pywsgi.py:1349]
+[2025-03-10 10:27:49,126] INFO in pywsgi: 127.0.0.1 - - [2025-03-10 10:27:49] "GET /get_user_id HTTP/1.1" 200 209 0.000561
+2025-03-10 10:27:49,126 INFO: 127.0.0.1 - - [2025-03-10 10:27:49] "GET /get_user_id HTTP/1.1" 200 209 0.000561 [in /home/ubuntu/miniconda3/envs/vit2/lib/python3.9/site-packages/gevent/pywsgi.py:1349]
+[2025-03-10 10:27:49,181] INFO in pywsgi: 127.0.0.1 - - [2025-03-10 10:27:49] "GET /get_user_id HTTP/1.1" 200 209 0.000720
+2025-03-10 10:27:49,181 INFO: 127.0.0.1 - - [2025-03-10 10:27:49] "GET /get_user_id HTTP/1.1" 200 209 0.000720 [in /home/ubuntu/miniconda3/envs/vit2/lib/python3.9/site-packages/gevent/pywsgi.py:1349]
+[2025-03-10 10:28:14,095] INFO in pywsgi: 127.0.0.1 - - [2025-03-10 10:28:14] "OPTIONS /image HTTP/1.1" 200 340 0.000574
+2025-03-10 10:28:14,095 INFO: 127.0.0.1 - - [2025-03-10 10:28:14] "OPTIONS /image HTTP/1.1" 200 340 0.000574 [in /home/ubuntu/miniconda3/envs/vit2/lib/python3.9/site-packages/gevent/pywsgi.py:1349]
+[2025-03-10 10:28:14,137] INFO in app_json: Received POST request to /image
+2025-03-10 10:28:14,137 INFO: Received POST request to /image [in /home/ubuntu/backend/app_json.py:277]
+[2025-03-10 10:28:14,137] INFO in app_json: Request headers: Content-Type: multipart/form-data; boundary=----WebKitFormBoundaryNRuBcbDQ46l0GcIP
+Content-Length: 137413
+Host: cbd6-54-249-94-192.ngrok-free.app
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36
+Accept: application/json
+Accept-Encoding: gzip, deflate, br, zstd
+Accept-Language: zh-TW,zh;q=0.9,ja;q=0.8,en-US;q=0.7,en;q=0.6
+Ngrok-Skip-Browser-Warning: true
+Origin: https://marcelab.caece.net
+Priority: u=1, i
+Referer: https://marcelab.caece.net/
+Sec-Ch-Ua: "Not(A:Brand";v="99", "Google Chrome";v="133", "Chromium";v="133"
+Sec-Ch-Ua-Mobile: ?0
+Sec-Ch-Ua-Platform: "Windows"
+Sec-Fetch-Dest: empty
+Sec-Fetch-Mode: cors
+Sec-Fetch-Site: cross-site
+X-Forwarded-For: 140.112.13.114
+X-Forwarded-Host: cbd6-54-249-94-192.ngrok-free.app
+X-Forwarded-Proto: https
+
+
+2025-03-10 10:28:14,137 INFO: Request headers: Content-Type: multipart/form-data; boundary=----WebKitFormBoundaryNRuBcbDQ46l0GcIP
+Content-Length: 137413
+Host: cbd6-54-249-94-192.ngrok-free.app
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36
+Accept: application/json
+Accept-Encoding: gzip, deflate, br, zstd
+Accept-Language: zh-TW,zh;q=0.9,ja;q=0.8,en-US;q=0.7,en;q=0.6
+Ngrok-Skip-Browser-Warning: true
+Origin: https://marcelab.caece.net
+Priority: u=1, i
+Referer: https://marcelab.caece.net/
+Sec-Ch-Ua: "Not(A:Brand";v="99", "Google Chrome";v="133", "Chromium";v="133"
+Sec-Ch-Ua-Mobile: ?0
+Sec-Ch-Ua-Platform: "Windows"
+Sec-Fetch-Dest: empty
+Sec-Fetch-Mode: cors
+Sec-Fetch-Site: cross-site
+X-Forwarded-For: 140.112.13.114
+X-Forwarded-Host: cbd6-54-249-94-192.ngrok-free.app
+X-Forwarded-Proto: https
+
+ [in /home/ubuntu/backend/app_json.py:278]
+[2025-03-10 10:28:14,245] INFO in app_json: Request files: ImmutableMultiDict([('file', <FileStorage: 'photo_0.jpg' ('image/jpeg')>)])
+2025-03-10 10:28:14,245 INFO: Request files: ImmutableMultiDict([('file', <FileStorage: 'photo_0.jpg' ('image/jpeg')>)]) [in /home/ubuntu/backend/app_json.py:279]
+[2025-03-10 10:28:14,245] INFO in app_json: Request form: ImmutableMultiDict([('userId', 'bCe3WcX8XF2mfWzZ'), ('detectionType', 'wall'), ('CE_state', 'false')])
+2025-03-10 10:28:14,245 INFO: Request form: ImmutableMultiDict([('userId', 'bCe3WcX8XF2mfWzZ'), ('detectionType', 'wall'), ('CE_state', 'false')]) [in /home/ubuntu/backend/app_json.py:280]
+[2025-03-10 10:28:14,245] INFO in app_json: request:<Request 'https://cbd6-54-249-94-192.ngrok-free.app/image' [POST]>
+2025-03-10 10:28:14,245 INFO: request:<Request 'https://cbd6-54-249-94-192.ngrok-free.app/image' [POST]> [in /home/ubuntu/backend/app_json.py:285]
+[2025-03-10 10:28:14,245] INFO in app_json: file: <FileStorage: 'photo_0.jpg' ('image/jpeg')>
+2025-03-10 10:28:14,245 INFO: file: <FileStorage: 'photo_0.jpg' ('image/jpeg')> [in /home/ubuntu/backend/app_json.py:290]
+[2025-03-10 10:28:14,245] INFO in app_json: Ratio:0
+2025-03-10 10:28:14,245 INFO: Ratio:0 [in /home/ubuntu/backend/app_json.py:300]
+[2025-03-10 10:28:14,266] INFO in app_json: Created collection: column in database: bCe3WcX8XF2mfWzZ
+2025-03-10 10:28:14,266 INFO: Created collection: column in database: bCe3WcX8XF2mfWzZ [in /home/ubuntu/backend/app_json.py:314]
+[2025-03-10 10:28:14,289] INFO in app_json: Created collection: beam in database: bCe3WcX8XF2mfWzZ
+2025-03-10 10:28:14,289 INFO: Created collection: beam in database: bCe3WcX8XF2mfWzZ [in /home/ubuntu/backend/app_json.py:314]
+[2025-03-10 10:28:14,310] INFO in app_json: Created collection: wall in database: bCe3WcX8XF2mfWzZ
+2025-03-10 10:28:14,310 INFO: Created collection: wall in database: bCe3WcX8XF2mfWzZ [in /home/ubuntu/backend/app_json.py:314]
+[2025-03-10 10:28:14,323] INFO in app_json: Ratio:0
+2025-03-10 10:28:14,323 INFO: Ratio:0 [in /home/ubuntu/backend/app_json.py:336]
+[2025-03-10 10:28:14,324] INFO in app_json: costEstimation:False
+2025-03-10 10:28:14,324 INFO: costEstimation:False [in /home/ubuntu/backend/app_json.py:337]
+[2025-03-10 10:28:14,324] INFO in app_json: Performing image quality check
+2025-03-10 10:28:14,324 INFO: Performing image quality check [in /home/ubuntu/backend/app_json.py:338]
+[2025-03-10 10:28:14,546] INFO in app_json: test
+2025-03-10 10:28:14,546 INFO: test [in /home/ubuntu/backend/app_json.py:343]
+[2025-03-10 10:28:14,547] INFO in app_json: Performing damage classification
+2025-03-10 10:28:14,547 INFO: Performing damage classification [in /home/ubuntu/backend/app_json.py:348]
+[2025-03-10 10:28:14,820] INFO in app_json: Performing damage detection
+2025-03-10 10:28:14,820 INFO: Performing damage detection [in /home/ubuntu/backend/app_json.py:351]
+
+0: 640x640 3 Crackss, 3 Spallings, 2051.3ms
+Speed: 1.7ms preprocess, 2051.3ms inference, 0.6ms postprocess per image at shape (1, 3, 640, 640)
+Detected classes: ['Cracks', 'Spalling']
+classification result: ['Spalling', 'Horizontal', 'Spalling', 'Web', 'Spalling']
+[2025-03-10 10:28:17,684] INFO in app_json: Performing Reason check
+2025-03-10 10:28:17,684 INFO: Performing Reason check [in /home/ubuntu/backend/app_json.py:356]
+[2025-03-10 10:28:17,684] INFO in app_json: Model complete
+2025-03-10 10:28:17,684 INFO: Model complete [in /home/ubuntu/backend/app_json.py:358]
+[2025-03-10 10:28:17,755] INFO in app_json: Resizing detected image to 640x640
+2025-03-10 10:28:17,755 INFO: Resizing detected image to 640x640 [in /home/ubuntu/backend/app_json.py:365]
+[2025-03-10 10:28:17,770] INFO in app_json: Classification complete, storing result in database
+2025-03-10 10:28:17,770 INFO: Classification complete, storing result in database [in /home/ubuntu/backend/app_json.py:377]
+[2025-03-10 10:28:17,771] INFO in app_json: <Response 314 bytes [200 OK]>
+2025-03-10 10:28:17,771 INFO: <Response 314 bytes [200 OK]> [in /home/ubuntu/backend/app_json.py:420]
+[2025-03-10 10:28:17,771] INFO in pywsgi: 127.0.0.1 - - [2025-03-10 10:28:17] "POST /image HTTP/1.1" 200 455 3.634957
+2025-03-10 10:28:17,771 INFO: 127.0.0.1 - - [2025-03-10 10:28:17] "POST /image HTTP/1.1" 200 455 3.634957 [in /home/ubuntu/miniconda3/envs/vit2/lib/python3.9/site-packages/gevent/pywsgi.py:1349]
+[2025-03-10 10:28:20,231] INFO in pywsgi: 127.0.0.1 - - [2025-03-10 10:28:20] "OPTIONS /results/check_overall/bCe3WcX8XF2mfWzZ HTTP/1.1" 200 340 0.000726
+2025-03-10 10:28:20,231 INFO: 127.0.0.1 - - [2025-03-10 10:28:20] "OPTIONS /results/check_overall/bCe3WcX8XF2mfWzZ HTTP/1.1" 200 340 0.000726 [in /home/ubuntu/miniconda3/envs/vit2/lib/python3.9/site-packages/gevent/pywsgi.py:1349]
+[2025-03-10 10:28:20,281] INFO in app_json: Received userid (db_name): bCe3WcX8XF2mfWzZ
+2025-03-10 10:28:20,281 INFO: Received userid (db_name): bCe3WcX8XF2mfWzZ [in /home/ubuntu/backend/app_json.py:458]
+[2025-03-10 10:28:20,298] INFO in pywsgi: 127.0.0.1 - - [2025-03-10 10:28:20] "POST /results/check_overall/bCe3WcX8XF2mfWzZ HTTP/1.1" 200 2781493 0.016681
+2025-03-10 10:28:20,298 INFO: 127.0.0.1 - - [2025-03-10 10:28:20] "POST /results/check_overall/bCe3WcX8XF2mfWzZ HTTP/1.1" 200 2781493 0.016681 [in /home/ubuntu/miniconda3/envs/vit2/lib/python3.9/site-packages/gevent/pywsgi.py:1349]
+[2025-03-10 10:43:07,560] INFO in pywsgi: 127.0.0.1 - - [2025-03-10 10:43:07] "OPTIONS /get_user_id HTTP/1.1" 200 334 0.000503
+2025-03-10 10:43:07,560 INFO: 127.0.0.1 - - [2025-03-10 10:43:07] "OPTIONS /get_user_id HTTP/1.1" 200 334 0.000503 [in /home/ubuntu/miniconda3/envs/vit2/lib/python3.9/site-packages/gevent/pywsgi.py:1349]
+[2025-03-10 10:43:07,562] INFO in pywsgi: 127.0.0.1 - - [2025-03-10 10:43:07] "OPTIONS /get_user_id HTTP/1.1" 200 334 0.000396
+2025-03-10 10:43:07,562 INFO: 127.0.0.1 - - [2025-03-10 10:43:07] "OPTIONS /get_user_id HTTP/1.1" 200 334 0.000396 [in /home/ubuntu/miniconda3/envs/vit2/lib/python3.9/site-packages/gevent/pywsgi.py:1349]
+[2025-03-10 10:43:07,643] INFO in pywsgi: 127.0.0.1 - - [2025-03-10 10:43:07] "GET /get_user_id HTTP/1.1" 200 209 0.000599
+2025-03-10 10:43:07,643 INFO: 127.0.0.1 - - [2025-03-10 10:43:07] "GET /get_user_id HTTP/1.1" 200 209 0.000599 [in /home/ubuntu/miniconda3/envs/vit2/lib/python3.9/site-packages/gevent/pywsgi.py:1349]
+[2025-03-10 10:43:07,688] INFO in pywsgi: 127.0.0.1 - - [2025-03-10 10:43:07] "GET /get_user_id HTTP/1.1" 200 209 0.000580
+2025-03-10 10:43:07,688 INFO: 127.0.0.1 - - [2025-03-10 10:43:07] "GET /get_user_id HTTP/1.1" 200 209 0.000580 [in /home/ubuntu/miniconda3/envs/vit2/lib/python3.9/site-packages/gevent/pywsgi.py:1349]
+[2025-03-10 10:43:22,346] INFO in pywsgi: 127.0.0.1 - - [2025-03-10 10:43:22] "OPTIONS /image HTTP/1.1" 200 340 0.000598
+2025-03-10 10:43:22,346 INFO: 127.0.0.1 - - [2025-03-10 10:43:22] "OPTIONS /image HTTP/1.1" 200 340 0.000598 [in /home/ubuntu/miniconda3/envs/vit2/lib/python3.9/site-packages/gevent/pywsgi.py:1349]
+[2025-03-10 10:43:22,389] INFO in app_json: Received POST request to /image
+2025-03-10 10:43:22,389 INFO: Received POST request to /image [in /home/ubuntu/backend/app_json.py:277]
+[2025-03-10 10:43:22,389] INFO in app_json: Request headers: Content-Type: multipart/form-data; boundary=----WebKitFormBoundaryOxSAll4IzmLydB3m
+Content-Length: 137413
+Host: cbd6-54-249-94-192.ngrok-free.app
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36
+Accept: application/json
+Accept-Encoding: gzip, deflate, br, zstd
+Accept-Language: zh-TW,zh;q=0.9,ja;q=0.8,en-US;q=0.7,en;q=0.6
+Ngrok-Skip-Browser-Warning: true
+Origin: https://marcelab.caece.net
+Priority: u=1, i
+Referer: https://marcelab.caece.net/
+Sec-Ch-Ua: "Not(A:Brand";v="99", "Google Chrome";v="133", "Chromium";v="133"
+Sec-Ch-Ua-Mobile: ?0
+Sec-Ch-Ua-Platform: "Windows"
+Sec-Fetch-Dest: empty
+Sec-Fetch-Mode: cors
+Sec-Fetch-Site: cross-site
+X-Forwarded-For: 140.112.13.114
+X-Forwarded-Host: cbd6-54-249-94-192.ngrok-free.app
+X-Forwarded-Proto: https
+
+
+2025-03-10 10:43:22,389 INFO: Request headers: Content-Type: multipart/form-data; boundary=----WebKitFormBoundaryOxSAll4IzmLydB3m
+Content-Length: 137413
+Host: cbd6-54-249-94-192.ngrok-free.app
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36
+Accept: application/json
+Accept-Encoding: gzip, deflate, br, zstd
+Accept-Language: zh-TW,zh;q=0.9,ja;q=0.8,en-US;q=0.7,en;q=0.6
+Ngrok-Skip-Browser-Warning: true
+Origin: https://marcelab.caece.net
+Priority: u=1, i
+Referer: https://marcelab.caece.net/
+Sec-Ch-Ua: "Not(A:Brand";v="99", "Google Chrome";v="133", "Chromium";v="133"
+Sec-Ch-Ua-Mobile: ?0
+Sec-Ch-Ua-Platform: "Windows"
+Sec-Fetch-Dest: empty
+Sec-Fetch-Mode: cors
+Sec-Fetch-Site: cross-site
+X-Forwarded-For: 140.112.13.114
+X-Forwarded-Host: cbd6-54-249-94-192.ngrok-free.app
+X-Forwarded-Proto: https
+
+ [in /home/ubuntu/backend/app_json.py:278]
+[2025-03-10 10:43:22,495] INFO in app_json: Request files: ImmutableMultiDict([('file', <FileStorage: 'photo_0.jpg' ('image/jpeg')>)])
+2025-03-10 10:43:22,495 INFO: Request files: ImmutableMultiDict([('file', <FileStorage: 'photo_0.jpg' ('image/jpeg')>)]) [in /home/ubuntu/backend/app_json.py:279]
+[2025-03-10 10:43:22,495] INFO in app_json: Request form: ImmutableMultiDict([('userId', 'cR01yCjzeu3DPksF'), ('detectionType', 'wall'), ('CE_state', 'false')])
+2025-03-10 10:43:22,495 INFO: Request form: ImmutableMultiDict([('userId', 'cR01yCjzeu3DPksF'), ('detectionType', 'wall'), ('CE_state', 'false')]) [in /home/ubuntu/backend/app_json.py:280]
+[2025-03-10 10:43:22,495] INFO in app_json: request:<Request 'https://cbd6-54-249-94-192.ngrok-free.app/image' [POST]>
+2025-03-10 10:43:22,495 INFO: request:<Request 'https://cbd6-54-249-94-192.ngrok-free.app/image' [POST]> [in /home/ubuntu/backend/app_json.py:285]
+[2025-03-10 10:43:22,495] INFO in app_json: file: <FileStorage: 'photo_0.jpg' ('image/jpeg')>
+2025-03-10 10:43:22,495 INFO: file: <FileStorage: 'photo_0.jpg' ('image/jpeg')> [in /home/ubuntu/backend/app_json.py:290]
+[2025-03-10 10:43:22,495] INFO in app_json: Ratio:0
+2025-03-10 10:43:22,495 INFO: Ratio:0 [in /home/ubuntu/backend/app_json.py:300]
+[2025-03-10 10:43:22,518] INFO in app_json: Created collection: column in database: cR01yCjzeu3DPksF
+2025-03-10 10:43:22,518 INFO: Created collection: column in database: cR01yCjzeu3DPksF [in /home/ubuntu/backend/app_json.py:314]
+[2025-03-10 10:43:22,542] INFO in app_json: Created collection: beam in database: cR01yCjzeu3DPksF
+2025-03-10 10:43:22,542 INFO: Created collection: beam in database: cR01yCjzeu3DPksF [in /home/ubuntu/backend/app_json.py:314]
+[2025-03-10 10:43:22,566] INFO in app_json: Created collection: wall in database: cR01yCjzeu3DPksF
+2025-03-10 10:43:22,566 INFO: Created collection: wall in database: cR01yCjzeu3DPksF [in /home/ubuntu/backend/app_json.py:314]
+[2025-03-10 10:43:22,580] INFO in app_json: Ratio:0
+2025-03-10 10:43:22,580 INFO: Ratio:0 [in /home/ubuntu/backend/app_json.py:336]
+[2025-03-10 10:43:22,580] INFO in app_json: costEstimation:False
+2025-03-10 10:43:22,580 INFO: costEstimation:False [in /home/ubuntu/backend/app_json.py:337]
+[2025-03-10 10:43:22,580] INFO in app_json: Performing image quality check
+2025-03-10 10:43:22,580 INFO: Performing image quality check [in /home/ubuntu/backend/app_json.py:338]
+[2025-03-10 10:43:22,803] INFO in app_json: test
+2025-03-10 10:43:22,803 INFO: test [in /home/ubuntu/backend/app_json.py:343]
+[2025-03-10 10:43:22,803] INFO in app_json: Performing damage classification
+2025-03-10 10:43:22,803 INFO: Performing damage classification [in /home/ubuntu/backend/app_json.py:348]
+[2025-03-10 10:43:23,074] INFO in app_json: Performing damage detection
+2025-03-10 10:43:23,074 INFO: Performing damage detection [in /home/ubuntu/backend/app_json.py:351]
+
+0: 640x640 3 Crackss, 3 Spallings, 2018.2ms
+Speed: 2.1ms preprocess, 2018.2ms inference, 0.6ms postprocess per image at shape (1, 3, 640, 640)
+Detected classes: ['Cracks', 'Spalling']
+classification result: ['Spalling', 'Horizontal', 'Spalling', 'Web', 'Spalling']
+[2025-03-10 10:43:25,978] INFO in app_json: Performing Reason check
+2025-03-10 10:43:25,978 INFO: Performing Reason check [in /home/ubuntu/backend/app_json.py:356]
+[2025-03-10 10:43:25,978] INFO in app_json: Model complete
+2025-03-10 10:43:25,978 INFO: Model complete [in /home/ubuntu/backend/app_json.py:358]
+[2025-03-10 10:43:26,051] INFO in app_json: Resizing detected image to 640x640
+2025-03-10 10:43:26,051 INFO: Resizing detected image to 640x640 [in /home/ubuntu/backend/app_json.py:365]
+[2025-03-10 10:43:26,067] INFO in app_json: Classification complete, storing result in database
+2025-03-10 10:43:26,067 INFO: Classification complete, storing result in database [in /home/ubuntu/backend/app_json.py:377]
+[2025-03-10 10:43:26,068] INFO in app_json: <Response 314 bytes [200 OK]>
+2025-03-10 10:43:26,068 INFO: <Response 314 bytes [200 OK]> [in /home/ubuntu/backend/app_json.py:420]
+[2025-03-10 10:43:26,069] INFO in pywsgi: 127.0.0.1 - - [2025-03-10 10:43:26] "POST /image HTTP/1.1" 200 455 3.679872
+2025-03-10 10:43:26,069 INFO: 127.0.0.1 - - [2025-03-10 10:43:26] "POST /image HTTP/1.1" 200 455 3.679872 [in /home/ubuntu/miniconda3/envs/vit2/lib/python3.9/site-packages/gevent/pywsgi.py:1349]
+[2025-03-10 10:43:29,160] INFO in pywsgi: 127.0.0.1 - - [2025-03-10 10:43:29] "OPTIONS /results/check_overall/cR01yCjzeu3DPksF HTTP/1.1" 200 340 0.001083
+2025-03-10 10:43:29,160 INFO: 127.0.0.1 - - [2025-03-10 10:43:29] "OPTIONS /results/check_overall/cR01yCjzeu3DPksF HTTP/1.1" 200 340 0.001083 [in /home/ubuntu/miniconda3/envs/vit2/lib/python3.9/site-packages/gevent/pywsgi.py:1349]
+[2025-03-10 10:43:29,202] INFO in app_json: Received userid (db_name): cR01yCjzeu3DPksF
+2025-03-10 10:43:29,202 INFO: Received userid (db_name): cR01yCjzeu3DPksF [in /home/ubuntu/backend/app_json.py:458]
+[2025-03-10 10:43:29,218] INFO in pywsgi: 127.0.0.1 - - [2025-03-10 10:43:29] "POST /results/check_overall/cR01yCjzeu3DPksF HTTP/1.1" 200 2781493 0.016316
+2025-03-10 10:43:29,218 INFO: 127.0.0.1 - - [2025-03-10 10:43:29] "POST /results/check_overall/cR01yCjzeu3DPksF HTTP/1.1" 200 2781493 0.016316 [in /home/ubuntu/miniconda3/envs/vit2/lib/python3.9/site-packages/gevent/pywsgi.py:1349]
+[2025-03-11 08:09:13,291] INFO in pywsgi: 127.0.0.1 - - [2025-03-11 08:09:13] "OPTIONS /get_user_id HTTP/1.1" 200 334 0.000531
+2025-03-11 08:09:13,291 INFO: 127.0.0.1 - - [2025-03-11 08:09:13] "OPTIONS /get_user_id HTTP/1.1" 200 334 0.000531 [in /home/ubuntu/miniconda3/envs/vit2/lib/python3.9/site-packages/gevent/pywsgi.py:1349]
+[2025-03-11 08:09:13,293] INFO in pywsgi: 127.0.0.1 - - [2025-03-11 08:09:13] "OPTIONS /get_user_id HTTP/1.1" 200 334 0.001358
+2025-03-11 08:09:13,293 INFO: 127.0.0.1 - - [2025-03-11 08:09:13] "OPTIONS /get_user_id HTTP/1.1" 200 334 0.001358 [in /home/ubuntu/miniconda3/envs/vit2/lib/python3.9/site-packages/gevent/pywsgi.py:1349]
+[2025-03-11 08:09:13,374] INFO in pywsgi: 127.0.0.1 - - [2025-03-11 08:09:13] "GET /get_user_id HTTP/1.1" 200 209 0.000600
+2025-03-11 08:09:13,374 INFO: 127.0.0.1 - - [2025-03-11 08:09:13] "GET /get_user_id HTTP/1.1" 200 209 0.000600 [in /home/ubuntu/miniconda3/envs/vit2/lib/python3.9/site-packages/gevent/pywsgi.py:1349]
+[2025-03-11 08:09:13,415] INFO in pywsgi: 127.0.0.1 - - [2025-03-11 08:09:13] "GET /get_user_id HTTP/1.1" 200 209 0.000975
+2025-03-11 08:09:13,415 INFO: 127.0.0.1 - - [2025-03-11 08:09:13] "GET /get_user_id HTTP/1.1" 200 209 0.000975 [in /home/ubuntu/miniconda3/envs/vit2/lib/python3.9/site-packages/gevent/pywsgi.py:1349]
+[2025-03-13 16:07:58,973] INFO in pywsgi: 127.0.0.1 - - [2025-03-13 16:07:58] "OPTIONS /get_user_id HTTP/1.1" 200 334 0.000767
+2025-03-13 16:07:58,973 INFO: 127.0.0.1 - - [2025-03-13 16:07:58] "OPTIONS /get_user_id HTTP/1.1" 200 334 0.000767 [in /home/ubuntu/miniconda3/envs/vit2/lib/python3.9/site-packages/gevent/pywsgi.py:1349]
+[2025-03-13 16:07:58,975] INFO in pywsgi: 127.0.0.1 - - [2025-03-13 16:07:58] "OPTIONS /get_user_id HTTP/1.1" 200 334 0.000375
+2025-03-13 16:07:58,975 INFO: 127.0.0.1 - - [2025-03-13 16:07:58] "OPTIONS /get_user_id HTTP/1.1" 200 334 0.000375 [in /home/ubuntu/miniconda3/envs/vit2/lib/python3.9/site-packages/gevent/pywsgi.py:1349]
+[2025-03-13 16:07:59,072] INFO in pywsgi: 127.0.0.1 - - [2025-03-13 16:07:59] "GET /get_user_id HTTP/1.1" 200 209 0.000606
+2025-03-13 16:07:59,072 INFO: 127.0.0.1 - - [2025-03-13 16:07:59] "GET /get_user_id HTTP/1.1" 200 209 0.000606 [in /home/ubuntu/miniconda3/envs/vit2/lib/python3.9/site-packages/gevent/pywsgi.py:1349]
+[2025-03-13 16:07:59,126] INFO in pywsgi: 127.0.0.1 - - [2025-03-13 16:07:59] "GET /get_user_id HTTP/1.1" 200 209 0.000543
+2025-03-13 16:07:59,126 INFO: 127.0.0.1 - - [2025-03-13 16:07:59] "GET /get_user_id HTTP/1.1" 200 209 0.000543 [in /home/ubuntu/miniconda3/envs/vit2/lib/python3.9/site-packages/gevent/pywsgi.py:1349]
+[2025-03-13 16:08:24,981] INFO in pywsgi: 127.0.0.1 - - [2025-03-13 16:08:24] "OPTIONS /get_user_id HTTP/1.1" 200 334 0.000562
+2025-03-13 16:08:24,981 INFO: 127.0.0.1 - - [2025-03-13 16:08:24] "OPTIONS /get_user_id HTTP/1.1" 200 334 0.000562 [in /home/ubuntu/miniconda3/envs/vit2/lib/python3.9/site-packages/gevent/pywsgi.py:1349]
+[2025-03-13 16:08:24,982] INFO in pywsgi: 127.0.0.1 - - [2025-03-13 16:08:24] "OPTIONS /get_user_id HTTP/1.1" 200 334 0.000346
+2025-03-13 16:08:24,982 INFO: 127.0.0.1 - - [2025-03-13 16:08:24] "OPTIONS /get_user_id HTTP/1.1" 200 334 0.000346 [in /home/ubuntu/miniconda3/envs/vit2/lib/python3.9/site-packages/gevent/pywsgi.py:1349]
+[2025-03-13 16:08:25,117] INFO in pywsgi: 127.0.0.1 - - [2025-03-13 16:08:25] "GET /get_user_id HTTP/1.1" 200 209 0.000854
+2025-03-13 16:08:25,117 INFO: 127.0.0.1 - - [2025-03-13 16:08:25] "GET /get_user_id HTTP/1.1" 200 209 0.000854 [in /home/ubuntu/miniconda3/envs/vit2/lib/python3.9/site-packages/gevent/pywsgi.py:1349]
+[2025-03-13 16:08:25,208] INFO in pywsgi: 127.0.0.1 - - [2025-03-13 16:08:25] "GET /get_user_id HTTP/1.1" 200 209 0.000524
+2025-03-13 16:08:25,208 INFO: 127.0.0.1 - - [2025-03-13 16:08:25] "GET /get_user_id HTTP/1.1" 200 209 0.000524 [in /home/ubuntu/miniconda3/envs/vit2/lib/python3.9/site-packages/gevent/pywsgi.py:1349]
+[2025-03-14 02:17:27,436] INFO in pywsgi: 127.0.0.1 - - [2025-03-14 02:17:27] "OPTIONS /get_user_id HTTP/1.1" 200 334 0.000563
+2025-03-14 02:17:27,436 INFO: 127.0.0.1 - - [2025-03-14 02:17:27] "OPTIONS /get_user_id HTTP/1.1" 200 334 0.000563 [in /home/ubuntu/miniconda3/envs/vit2/lib/python3.9/site-packages/gevent/pywsgi.py:1349]
+[2025-03-14 02:17:27,438] INFO in pywsgi: 127.0.0.1 - - [2025-03-14 02:17:27] "OPTIONS /get_user_id HTTP/1.1" 200 334 0.000385
+2025-03-14 02:17:27,438 INFO: 127.0.0.1 - - [2025-03-14 02:17:27] "OPTIONS /get_user_id HTTP/1.1" 200 334 0.000385 [in /home/ubuntu/miniconda3/envs/vit2/lib/python3.9/site-packages/gevent/pywsgi.py:1349]
+[2025-03-14 02:17:27,570] INFO in pywsgi: 127.0.0.1 - - [2025-03-14 02:17:27] "GET /get_user_id HTTP/1.1" 200 209 0.000580
+2025-03-14 02:17:27,570 INFO: 127.0.0.1 - - [2025-03-14 02:17:27] "GET /get_user_id HTTP/1.1" 200 209 0.000580 [in /home/ubuntu/miniconda3/envs/vit2/lib/python3.9/site-packages/gevent/pywsgi.py:1349]
+[2025-03-14 02:17:27,661] INFO in pywsgi: 127.0.0.1 - - [2025-03-14 02:17:27] "GET /get_user_id HTTP/1.1" 200 209 0.000568
+2025-03-14 02:17:27,661 INFO: 127.0.0.1 - - [2025-03-14 02:17:27] "GET /get_user_id HTTP/1.1" 200 209 0.000568 [in /home/ubuntu/miniconda3/envs/vit2/lib/python3.9/site-packages/gevent/pywsgi.py:1349]
+[2025-03-14 02:38:35,223] INFO in pywsgi: 127.0.0.1 - - [2025-03-14 02:38:35] "OPTIONS /get_user_id HTTP/1.1" 200 334 0.000542
+2025-03-14 02:38:35,223 INFO: 127.0.0.1 - - [2025-03-14 02:38:35] "OPTIONS /get_user_id HTTP/1.1" 200 334 0.000542 [in /home/ubuntu/miniconda3/envs/vit2/lib/python3.9/site-packages/gevent/pywsgi.py:1349]
+[2025-03-14 02:38:35,224] INFO in pywsgi: 127.0.0.1 - - [2025-03-14 02:38:35] "OPTIONS /get_user_id HTTP/1.1" 200 334 0.000350
+2025-03-14 02:38:35,224 INFO: 127.0.0.1 - - [2025-03-14 02:38:35] "OPTIONS /get_user_id HTTP/1.1" 200 334 0.000350 [in /home/ubuntu/miniconda3/envs/vit2/lib/python3.9/site-packages/gevent/pywsgi.py:1349]
+[2025-03-14 02:38:35,335] INFO in pywsgi: 127.0.0.1 - - [2025-03-14 02:38:35] "GET /get_user_id HTTP/1.1" 200 209 0.000586
+2025-03-14 02:38:35,335 INFO: 127.0.0.1 - - [2025-03-14 02:38:35] "GET /get_user_id HTTP/1.1" 200 209 0.000586 [in /home/ubuntu/miniconda3/envs/vit2/lib/python3.9/site-packages/gevent/pywsgi.py:1349]
+[2025-03-14 02:38:35,398] INFO in pywsgi: 127.0.0.1 - - [2025-03-14 02:38:35] "GET /get_user_id HTTP/1.1" 200 209 0.000583
+2025-03-14 02:38:35,398 INFO: 127.0.0.1 - - [2025-03-14 02:38:35] "GET /get_user_id HTTP/1.1" 200 209 0.000583 [in /home/ubuntu/miniconda3/envs/vit2/lib/python3.9/site-packages/gevent/pywsgi.py:1349]
+[2025-03-14 02:39:03,739] INFO in pywsgi: 127.0.0.1 - - [2025-03-14 02:39:03] "OPTIONS /get_user_id HTTP/1.1" 200 334 0.000630
+2025-03-14 02:39:03,739 INFO: 127.0.0.1 - - [2025-03-14 02:39:03] "OPTIONS /get_user_id HTTP/1.1" 200 334 0.000630 [in /home/ubuntu/miniconda3/envs/vit2/lib/python3.9/site-packages/gevent/pywsgi.py:1349]
+[2025-03-14 02:39:03,740] INFO in pywsgi: 127.0.0.1 - - [2025-03-14 02:39:03] "OPTIONS /get_user_id HTTP/1.1" 200 334 0.000458
+2025-03-14 02:39:03,740 INFO: 127.0.0.1 - - [2025-03-14 02:39:03] "OPTIONS /get_user_id HTTP/1.1" 200 334 0.000458 [in /home/ubuntu/miniconda3/envs/vit2/lib/python3.9/site-packages/gevent/pywsgi.py:1349]
+[2025-03-14 02:39:03,813] INFO in pywsgi: 127.0.0.1 - - [2025-03-14 02:39:03] "GET /get_user_id HTTP/1.1" 200 209 0.000538
+2025-03-14 02:39:03,813 INFO: 127.0.0.1 - - [2025-03-14 02:39:03] "GET /get_user_id HTTP/1.1" 200 209 0.000538 [in /home/ubuntu/miniconda3/envs/vit2/lib/python3.9/site-packages/gevent/pywsgi.py:1349]
+[2025-03-14 02:39:03,894] INFO in pywsgi: 127.0.0.1 - - [2025-03-14 02:39:03] "GET /get_user_id HTTP/1.1" 200 209 0.000576
+2025-03-14 02:39:03,894 INFO: 127.0.0.1 - - [2025-03-14 02:39:03] "GET /get_user_id HTTP/1.1" 200 209 0.000576 [in /home/ubuntu/miniconda3/envs/vit2/lib/python3.9/site-packages/gevent/pywsgi.py:1349]
+[2025-03-14 07:13:12,269] INFO in pywsgi: 127.0.0.1 - - [2025-03-14 07:13:12] "OPTIONS /get_user_id HTTP/1.1" 200 334 0.001002
+2025-03-14 07:13:12,269 INFO: 127.0.0.1 - - [2025-03-14 07:13:12] "OPTIONS /get_user_id HTTP/1.1" 200 334 0.001002 [in /home/ubuntu/miniconda3/envs/vit2/lib/python3.9/site-packages/gevent/pywsgi.py:1349]
+[2025-03-14 07:13:12,271] INFO in pywsgi: 127.0.0.1 - - [2025-03-14 07:13:12] "OPTIONS /get_user_id HTTP/1.1" 200 334 0.000377
+2025-03-14 07:13:12,271 INFO: 127.0.0.1 - - [2025-03-14 07:13:12] "OPTIONS /get_user_id HTTP/1.1" 200 334 0.000377 [in /home/ubuntu/miniconda3/envs/vit2/lib/python3.9/site-packages/gevent/pywsgi.py:1349]
+[2025-03-14 07:13:12,417] INFO in pywsgi: 127.0.0.1 - - [2025-03-14 07:13:12] "GET /get_user_id HTTP/1.1" 200 209 0.000569
+2025-03-14 07:13:12,417 INFO: 127.0.0.1 - - [2025-03-14 07:13:12] "GET /get_user_id HTTP/1.1" 200 209 0.000569 [in /home/ubuntu/miniconda3/envs/vit2/lib/python3.9/site-packages/gevent/pywsgi.py:1349]
+[2025-03-14 07:13:12,508] INFO in pywsgi: 127.0.0.1 - - [2025-03-14 07:13:12] "GET /get_user_id HTTP/1.1" 200 209 0.000580
+2025-03-14 07:13:12,508 INFO: 127.0.0.1 - - [2025-03-14 07:13:12] "GET /get_user_id HTTP/1.1" 200 209 0.000580 [in /home/ubuntu/miniconda3/envs/vit2/lib/python3.9/site-packages/gevent/pywsgi.py:1349]
+[2025-03-14 09:15:33,607] INFO in pywsgi: 127.0.0.1 - - [2025-03-14 09:15:33] "OPTIONS /get_user_id HTTP/1.1" 200 334 0.000530
+2025-03-14 09:15:33,607 INFO: 127.0.0.1 - - [2025-03-14 09:15:33] "OPTIONS /get_user_id HTTP/1.1" 200 334 0.000530 [in /home/ubuntu/miniconda3/envs/vit2/lib/python3.9/site-packages/gevent/pywsgi.py:1349]
+[2025-03-14 09:15:33,608] INFO in pywsgi: 127.0.0.1 - - [2025-03-14 09:15:33] "OPTIONS /get_user_id HTTP/1.1" 200 334 0.000377
+2025-03-14 09:15:33,608 INFO: 127.0.0.1 - - [2025-03-14 09:15:33] "OPTIONS /get_user_id HTTP/1.1" 200 334 0.000377 [in /home/ubuntu/miniconda3/envs/vit2/lib/python3.9/site-packages/gevent/pywsgi.py:1349]
+[2025-03-14 09:15:33,858] INFO in pywsgi: 127.0.0.1 - - [2025-03-14 09:15:33] "GET /get_user_id HTTP/1.1" 200 209 0.000496
+2025-03-14 09:15:33,858 INFO: 127.0.0.1 - - [2025-03-14 09:15:33] "GET /get_user_id HTTP/1.1" 200 209 0.000496 [in /home/ubuntu/miniconda3/envs/vit2/lib/python3.9/site-packages/gevent/pywsgi.py:1349]
+[2025-03-14 09:15:33,861] INFO in pywsgi: 127.0.0.1 - - [2025-03-14 09:15:33] "GET /get_user_id HTTP/1.1" 200 209 0.001524
+2025-03-14 09:15:33,861 INFO: 127.0.0.1 - - [2025-03-14 09:15:33] "GET /get_user_id HTTP/1.1" 200 209 0.001524 [in /home/ubuntu/miniconda3/envs/vit2/lib/python3.9/site-packages/gevent/pywsgi.py:1349]
+[2025-03-14 15:12:02,329] INFO in pywsgi: 127.0.0.1 - - [2025-03-14 15:12:02] "OPTIONS /get_user_id HTTP/1.1" 200 334 0.001143
+2025-03-14 15:12:02,329 INFO: 127.0.0.1 - - [2025-03-14 15:12:02] "OPTIONS /get_user_id HTTP/1.1" 200 334 0.001143 [in /home/ubuntu/miniconda3/envs/vit2/lib/python3.9/site-packages/gevent/pywsgi.py:1349]
+[2025-03-14 15:12:02,330] INFO in pywsgi: 127.0.0.1 - - [2025-03-14 15:12:02] "OPTIONS /get_user_id HTTP/1.1" 200 334 0.000345
+2025-03-14 15:12:02,330 INFO: 127.0.0.1 - - [2025-03-14 15:12:02] "OPTIONS /get_user_id HTTP/1.1" 200 334 0.000345 [in /home/ubuntu/miniconda3/envs/vit2/lib/python3.9/site-packages/gevent/pywsgi.py:1349]
+[2025-03-14 15:12:02,599] INFO in pywsgi: 127.0.0.1 - - [2025-03-14 15:12:02] "GET /get_user_id HTTP/1.1" 200 209 0.000623
+2025-03-14 15:12:02,599 INFO: 127.0.0.1 - - [2025-03-14 15:12:02] "GET /get_user_id HTTP/1.1" 200 209 0.000623 [in /home/ubuntu/miniconda3/envs/vit2/lib/python3.9/site-packages/gevent/pywsgi.py:1349]
+[2025-03-14 15:12:02,600] INFO in pywsgi: 127.0.0.1 - - [2025-03-14 15:12:02] "GET /get_user_id HTTP/1.1" 200 209 0.000439
+2025-03-14 15:12:02,600 INFO: 127.0.0.1 - - [2025-03-14 15:12:02] "GET /get_user_id HTTP/1.1" 200 209 0.000439 [in /home/ubuntu/miniconda3/envs/vit2/lib/python3.9/site-packages/gevent/pywsgi.py:1349]
+[2025-03-14 23:33:05,646] INFO in pywsgi: 127.0.0.1 - - [2025-03-14 23:33:05] "OPTIONS /get_user_id HTTP/1.1" 200 334 0.000519
+2025-03-14 23:33:05,646 INFO: 127.0.0.1 - - [2025-03-14 23:33:05] "OPTIONS /get_user_id HTTP/1.1" 200 334 0.000519 [in /home/ubuntu/miniconda3/envs/vit2/lib/python3.9/site-packages/gevent/pywsgi.py:1349]
+[2025-03-14 23:33:05,647] INFO in pywsgi: 127.0.0.1 - - [2025-03-14 23:33:05] "OPTIONS /get_user_id HTTP/1.1" 200 334 0.000365
+2025-03-14 23:33:05,647 INFO: 127.0.0.1 - - [2025-03-14 23:33:05] "OPTIONS /get_user_id HTTP/1.1" 200 334 0.000365 [in /home/ubuntu/miniconda3/envs/vit2/lib/python3.9/site-packages/gevent/pywsgi.py:1349]
+[2025-03-14 23:33:05,754] INFO in pywsgi: 127.0.0.1 - - [2025-03-14 23:33:05] "GET /get_user_id HTTP/1.1" 200 209 0.000588
+2025-03-14 23:33:05,754 INFO: 127.0.0.1 - - [2025-03-14 23:33:05] "GET /get_user_id HTTP/1.1" 200 209 0.000588 [in /home/ubuntu/miniconda3/envs/vit2/lib/python3.9/site-packages/gevent/pywsgi.py:1349]
+[2025-03-14 23:33:05,820] INFO in pywsgi: 127.0.0.1 - - [2025-03-14 23:33:05] "GET /get_user_id HTTP/1.1" 200 209 0.000551
+2025-03-14 23:33:05,820 INFO: 127.0.0.1 - - [2025-03-14 23:33:05] "GET /get_user_id HTTP/1.1" 200 209 0.000551 [in /home/ubuntu/miniconda3/envs/vit2/lib/python3.9/site-packages/gevent/pywsgi.py:1349]
+[2025-03-14 23:33:25,200] INFO in pywsgi: 127.0.0.1 - - [2025-03-14 23:33:25] "OPTIONS /get_user_id HTTP/1.1" 200 334 0.000575
+2025-03-14 23:33:25,200 INFO: 127.0.0.1 - - [2025-03-14 23:33:25] "OPTIONS /get_user_id HTTP/1.1" 200 334 0.000575 [in /home/ubuntu/miniconda3/envs/vit2/lib/python3.9/site-packages/gevent/pywsgi.py:1349]
+[2025-03-14 23:33:25,201] INFO in pywsgi: 127.0.0.1 - - [2025-03-14 23:33:25] "OPTIONS /get_user_id HTTP/1.1" 200 334 0.000392
+2025-03-14 23:33:25,201 INFO: 127.0.0.1 - - [2025-03-14 23:33:25] "OPTIONS /get_user_id HTTP/1.1" 200 334 0.000392 [in /home/ubuntu/miniconda3/envs/vit2/lib/python3.9/site-packages/gevent/pywsgi.py:1349]
+[2025-03-14 23:33:25,246] INFO in pywsgi: 127.0.0.1 - - [2025-03-14 23:33:25] "GET /get_user_id HTTP/1.1" 200 209 0.000634
+2025-03-14 23:33:25,246 INFO: 127.0.0.1 - - [2025-03-14 23:33:25] "GET /get_user_id HTTP/1.1" 200 209 0.000634 [in /home/ubuntu/miniconda3/envs/vit2/lib/python3.9/site-packages/gevent/pywsgi.py:1349]
+[2025-03-14 23:33:25,293] INFO in pywsgi: 127.0.0.1 - - [2025-03-14 23:33:25] "GET /get_user_id HTTP/1.1" 200 209 0.000619
+2025-03-14 23:33:25,293 INFO: 127.0.0.1 - - [2025-03-14 23:33:25] "GET /get_user_id HTTP/1.1" 200 209 0.000619 [in /home/ubuntu/miniconda3/envs/vit2/lib/python3.9/site-packages/gevent/pywsgi.py:1349]
+[2025-03-15 05:12:11,064] INFO in pywsgi: 127.0.0.1 - - [2025-03-15 05:12:11] "OPTIONS /get_user_id HTTP/1.1" 200 334 0.000527
+2025-03-15 05:12:11,064 INFO: 127.0.0.1 - - [2025-03-15 05:12:11] "OPTIONS /get_user_id HTTP/1.1" 200 334 0.000527 [in /home/ubuntu/miniconda3/envs/vit2/lib/python3.9/site-packages/gevent/pywsgi.py:1349]
+[2025-03-15 05:12:11,066] INFO in pywsgi: 127.0.0.1 - - [2025-03-15 05:12:11] "OPTIONS /get_user_id HTTP/1.1" 200 334 0.000823
+2025-03-15 05:12:11,066 INFO: 127.0.0.1 - - [2025-03-15 05:12:11] "OPTIONS /get_user_id HTTP/1.1" 200 334 0.000823 [in /home/ubuntu/miniconda3/envs/vit2/lib/python3.9/site-packages/gevent/pywsgi.py:1349]
+[2025-03-15 05:12:11,368] INFO in pywsgi: 127.0.0.1 - - [2025-03-15 05:12:11] "GET /get_user_id HTTP/1.1" 200 209 0.000574
+2025-03-15 05:12:11,368 INFO: 127.0.0.1 - - [2025-03-15 05:12:11] "GET /get_user_id HTTP/1.1" 200 209 0.000574 [in /home/ubuntu/miniconda3/envs/vit2/lib/python3.9/site-packages/gevent/pywsgi.py:1349]
+[2025-03-15 05:12:11,369] INFO in pywsgi: 127.0.0.1 - - [2025-03-15 05:12:11] "GET /get_user_id HTTP/1.1" 200 209 0.000354
+2025-03-15 05:12:11,369 INFO: 127.0.0.1 - - [2025-03-15 05:12:11] "GET /get_user_id HTTP/1.1" 200 209 0.000354 [in /home/ubuntu/miniconda3/envs/vit2/lib/python3.9/site-packages/gevent/pywsgi.py:1349]
+[2025-03-16 13:28:25,526] INFO in pywsgi: 127.0.0.1 - - [2025-03-16 13:28:25] "OPTIONS /get_user_id HTTP/1.1" 200 334 0.000513
+2025-03-16 13:28:25,526 INFO: 127.0.0.1 - - [2025-03-16 13:28:25] "OPTIONS /get_user_id HTTP/1.1" 200 334 0.000513 [in /home/ubuntu/miniconda3/envs/vit2/lib/python3.9/site-packages/gevent/pywsgi.py:1349]
+[2025-03-16 13:28:25,528] INFO in pywsgi: 127.0.0.1 - - [2025-03-16 13:28:25] "OPTIONS /get_user_id HTTP/1.1" 200 334 0.000391
+2025-03-16 13:28:25,528 INFO: 127.0.0.1 - - [2025-03-16 13:28:25] "OPTIONS /get_user_id HTTP/1.1" 200 334 0.000391 [in /home/ubuntu/miniconda3/envs/vit2/lib/python3.9/site-packages/gevent/pywsgi.py:1349]
+[2025-03-16 13:28:25,735] INFO in pywsgi: 127.0.0.1 - - [2025-03-16 13:28:25] "GET /get_user_id HTTP/1.1" 200 209 0.000560
+2025-03-16 13:28:25,735 INFO: 127.0.0.1 - - [2025-03-16 13:28:25] "GET /get_user_id HTTP/1.1" 200 209 0.000560 [in /home/ubuntu/miniconda3/envs/vit2/lib/python3.9/site-packages/gevent/pywsgi.py:1349]
+[2025-03-16 13:28:25,899] INFO in pywsgi: 127.0.0.1 - - [2025-03-16 13:28:25] "GET /get_user_id HTTP/1.1" 200 209 0.000568
+2025-03-16 13:28:25,899 INFO: 127.0.0.1 - - [2025-03-16 13:28:25] "GET /get_user_id HTTP/1.1" 200 209 0.000568 [in /home/ubuntu/miniconda3/envs/vit2/lib/python3.9/site-packages/gevent/pywsgi.py:1349]
+[2025-03-17 06:26:21,084] INFO in pywsgi: 127.0.0.1 - - [2025-03-17 06:26:21] "OPTIONS /get_user_id HTTP/1.1" 200 334 0.000516
+2025-03-17 06:26:21,084 INFO: 127.0.0.1 - - [2025-03-17 06:26:21] "OPTIONS /get_user_id HTTP/1.1" 200 334 0.000516 [in /home/ubuntu/miniconda3/envs/vit2/lib/python3.9/site-packages/gevent/pywsgi.py:1349]
+[2025-03-17 06:26:21,086] INFO in pywsgi: 127.0.0.1 - - [2025-03-17 06:26:21] "OPTIONS /get_user_id HTTP/1.1" 200 334 0.000397
+2025-03-17 06:26:21,086 INFO: 127.0.0.1 - - [2025-03-17 06:26:21] "OPTIONS /get_user_id HTTP/1.1" 200 334 0.000397 [in /home/ubuntu/miniconda3/envs/vit2/lib/python3.9/site-packages/gevent/pywsgi.py:1349]
+[2025-03-17 06:26:21,268] INFO in pywsgi: 127.0.0.1 - - [2025-03-17 06:26:21] "GET /get_user_id HTTP/1.1" 200 209 0.000558
+2025-03-17 06:26:21,268 INFO: 127.0.0.1 - - [2025-03-17 06:26:21] "GET /get_user_id HTTP/1.1" 200 209 0.000558 [in /home/ubuntu/miniconda3/envs/vit2/lib/python3.9/site-packages/gevent/pywsgi.py:1349]
+[2025-03-17 06:26:21,390] INFO in pywsgi: 127.0.0.1 - - [2025-03-17 06:26:21] "GET /get_user_id HTTP/1.1" 200 209 0.000604
+2025-03-17 06:26:21,390 INFO: 127.0.0.1 - - [2025-03-17 06:26:21] "GET /get_user_id HTTP/1.1" 200 209 0.000604 [in /home/ubuntu/miniconda3/envs/vit2/lib/python3.9/site-packages/gevent/pywsgi.py:1349]
+[2025-03-17 06:26:38,088] INFO in pywsgi: 127.0.0.1 - - [2025-03-17 06:26:38] "OPTIONS /get_user_id HTTP/1.1" 200 334 0.000613
+2025-03-17 06:26:38,088 INFO: 127.0.0.1 - - [2025-03-17 06:26:38] "OPTIONS /get_user_id HTTP/1.1" 200 334 0.000613 [in /home/ubuntu/miniconda3/envs/vit2/lib/python3.9/site-packages/gevent/pywsgi.py:1349]
+[2025-03-17 06:26:38,089] INFO in pywsgi: 127.0.0.1 - - [2025-03-17 06:26:38] "OPTIONS /get_user_id HTTP/1.1" 200 334 0.000461
+2025-03-17 06:26:38,089 INFO: 127.0.0.1 - - [2025-03-17 06:26:38] "OPTIONS /get_user_id HTTP/1.1" 200 334 0.000461 [in /home/ubuntu/miniconda3/envs/vit2/lib/python3.9/site-packages/gevent/pywsgi.py:1349]
+[2025-03-17 06:26:38,208] INFO in pywsgi: 127.0.0.1 - - [2025-03-17 06:26:38] "GET /get_user_id HTTP/1.1" 200 209 0.000577
+2025-03-17 06:26:38,208 INFO: 127.0.0.1 - - [2025-03-17 06:26:38] "GET /get_user_id HTTP/1.1" 200 209 0.000577 [in /home/ubuntu/miniconda3/envs/vit2/lib/python3.9/site-packages/gevent/pywsgi.py:1349]
+[2025-03-17 06:26:38,209] INFO in pywsgi: 127.0.0.1 - - [2025-03-17 06:26:38] "GET /get_user_id HTTP/1.1" 200 209 0.001157
+2025-03-17 06:26:38,209 INFO: 127.0.0.1 - - [2025-03-17 06:26:38] "GET /get_user_id HTTP/1.1" 200 209 0.001157 [in /home/ubuntu/miniconda3/envs/vit2/lib/python3.9/site-packages/gevent/pywsgi.py:1349]
+[2025-03-17 06:28:09,633] INFO in pywsgi: 127.0.0.1 - - [2025-03-17 06:28:09] "OPTIONS /image HTTP/1.1" 200 340 0.000592
+2025-03-17 06:28:09,633 INFO: 127.0.0.1 - - [2025-03-17 06:28:09] "OPTIONS /image HTTP/1.1" 200 340 0.000592 [in /home/ubuntu/miniconda3/envs/vit2/lib/python3.9/site-packages/gevent/pywsgi.py:1349]
+[2025-03-17 06:28:09,821] INFO in app_json: Received POST request to /image
+2025-03-17 06:28:09,821 INFO: Received POST request to /image [in /home/ubuntu/backend/app_json.py:277]
+[2025-03-17 06:28:09,821] INFO in app_json: Request headers: Content-Type: multipart/form-data; boundary=----WebKitFormBoundary2kB2wFJ1FjWsXkem
+Content-Length: 6685165
+Host: cbd6-54-249-94-192.ngrok-free.app
+User-Agent: Mozilla/5.0 (iPhone; CPU iPhone OS 16_7_10 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.6 Mobile/15E148 Safari/604.1
+Accept: application/json
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-TW,zh-Hant;q=0.9
+Ngrok-Skip-Browser-Warning: true
+Origin: https://marcelab.caece.net
+Referer: https://marcelab.caece.net/
+Sec-Fetch-Dest: empty
+Sec-Fetch-Mode: cors
+Sec-Fetch-Site: cross-site
+X-Forwarded-For: 49.216.20.188
+X-Forwarded-Host: cbd6-54-249-94-192.ngrok-free.app
+X-Forwarded-Proto: https
+
+
+2025-03-17 06:28:09,821 INFO: Request headers: Content-Type: multipart/form-data; boundary=----WebKitFormBoundary2kB2wFJ1FjWsXkem
+Content-Length: 6685165
+Host: cbd6-54-249-94-192.ngrok-free.app
+User-Agent: Mozilla/5.0 (iPhone; CPU iPhone OS 16_7_10 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.6 Mobile/15E148 Safari/604.1
+Accept: application/json
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-TW,zh-Hant;q=0.9
+Ngrok-Skip-Browser-Warning: true
+Origin: https://marcelab.caece.net
+Referer: https://marcelab.caece.net/
+Sec-Fetch-Dest: empty
+Sec-Fetch-Mode: cors
+Sec-Fetch-Site: cross-site
+X-Forwarded-For: 49.216.20.188
+X-Forwarded-Host: cbd6-54-249-94-192.ngrok-free.app
+X-Forwarded-Proto: https
+
+ [in /home/ubuntu/backend/app_json.py:278]
+[2025-03-17 06:28:27,751] INFO in app_json: Request files: ImmutableMultiDict([('file', <FileStorage: 'photo_0.jpg' ('image/jpeg')>)])
+2025-03-17 06:28:27,751 INFO: Request files: ImmutableMultiDict([('file', <FileStorage: 'photo_0.jpg' ('image/jpeg')>)]) [in /home/ubuntu/backend/app_json.py:279]
+[2025-03-17 06:28:27,752] INFO in app_json: Request form: ImmutableMultiDict([('userId', 'noVxDSkU4or38FzH'), ('detectionType', 'wall'), ('CE_state', 'false')])
+2025-03-17 06:28:27,752 INFO: Request form: ImmutableMultiDict([('userId', 'noVxDSkU4or38FzH'), ('detectionType', 'wall'), ('CE_state', 'false')]) [in /home/ubuntu/backend/app_json.py:280]
+[2025-03-17 06:28:27,752] INFO in app_json: request:<Request 'https://cbd6-54-249-94-192.ngrok-free.app/image' [POST]>
+2025-03-17 06:28:27,752 INFO: request:<Request 'https://cbd6-54-249-94-192.ngrok-free.app/image' [POST]> [in /home/ubuntu/backend/app_json.py:285]
+[2025-03-17 06:28:27,752] INFO in app_json: file: <FileStorage: 'photo_0.jpg' ('image/jpeg')>
+2025-03-17 06:28:27,752 INFO: file: <FileStorage: 'photo_0.jpg' ('image/jpeg')> [in /home/ubuntu/backend/app_json.py:290]
+[2025-03-17 06:28:27,752] INFO in app_json: Ratio:0
+2025-03-17 06:28:27,752 INFO: Ratio:0 [in /home/ubuntu/backend/app_json.py:300]
+[2025-03-17 06:28:27,775] INFO in app_json: Created collection: column in database: noVxDSkU4or38FzH
+2025-03-17 06:28:27,775 INFO: Created collection: column in database: noVxDSkU4or38FzH [in /home/ubuntu/backend/app_json.py:314]
+[2025-03-17 06:28:27,797] INFO in app_json: Created collection: beam in database: noVxDSkU4or38FzH
+2025-03-17 06:28:27,797 INFO: Created collection: beam in database: noVxDSkU4or38FzH [in /home/ubuntu/backend/app_json.py:314]
+[2025-03-17 06:28:27,819] INFO in app_json: Created collection: wall in database: noVxDSkU4or38FzH
+2025-03-17 06:28:27,819 INFO: Created collection: wall in database: noVxDSkU4or38FzH [in /home/ubuntu/backend/app_json.py:314]
+[2025-03-17 06:28:28,322] INFO in app_json: Ratio:0
+2025-03-17 06:28:28,322 INFO: Ratio:0 [in /home/ubuntu/backend/app_json.py:336]
+[2025-03-17 06:28:28,322] INFO in app_json: costEstimation:False
+2025-03-17 06:28:28,322 INFO: costEstimation:False [in /home/ubuntu/backend/app_json.py:337]
+[2025-03-17 06:28:28,322] INFO in app_json: Performing image quality check
+2025-03-17 06:28:28,322 INFO: Performing image quality check [in /home/ubuntu/backend/app_json.py:338]
+[2025-03-17 06:28:35,335] INFO in app_json: test
+2025-03-17 06:28:35,335 INFO: test [in /home/ubuntu/backend/app_json.py:343]
+[2025-03-17 06:28:35,335] INFO in app_json: Performing damage classification
+2025-03-17 06:28:35,335 INFO: Performing damage classification [in /home/ubuntu/backend/app_json.py:348]
+[2025-03-17 06:28:35,712] INFO in app_json: Performing damage detection
+2025-03-17 06:28:35,712 INFO: Performing damage detection [in /home/ubuntu/backend/app_json.py:351]
+
+0: 640x480 (no detections), 1603.0ms
+Speed: 3.4ms preprocess, 1603.0ms inference, 0.8ms postprocess per image at shape (1, 3, 640, 480)
+Detected classes: []
+classification result: []
+[2025-03-17 06:28:37,458] INFO in app_json: Performing Reason check
+2025-03-17 06:28:37,458 INFO: Performing Reason check [in /home/ubuntu/backend/app_json.py:356]
+[2025-03-17 06:28:37,459] INFO in app_json: Model complete
+2025-03-17 06:28:37,459 INFO: Model complete [in /home/ubuntu/backend/app_json.py:358]
+[2025-03-17 06:28:37,547] INFO in app_json: Resizing detected image to 640x640
+2025-03-17 06:28:37,547 INFO: Resizing detected image to 640x640 [in /home/ubuntu/backend/app_json.py:365]
+[2025-03-17 06:28:37,656] INFO in app_json: Classification complete, storing result in database
+2025-03-17 06:28:37,656 INFO: Classification complete, storing result in database [in /home/ubuntu/backend/app_json.py:377]
+[2025-03-17 06:28:37,657] INFO in app_json: <Response 276 bytes [200 OK]>
+2025-03-17 06:28:37,657 INFO: <Response 276 bytes [200 OK]> [in /home/ubuntu/backend/app_json.py:420]
+[2025-03-17 06:28:37,658] INFO in pywsgi: 127.0.0.1 - - [2025-03-17 06:28:37] "POST /image HTTP/1.1" 200 417 27.837444
+2025-03-17 06:28:37,658 INFO: 127.0.0.1 - - [2025-03-17 06:28:37] "POST /image HTTP/1.1" 200 417 27.837444 [in /home/ubuntu/miniconda3/envs/vit2/lib/python3.9/site-packages/gevent/pywsgi.py:1349]
+[2025-03-17 06:28:40,701] INFO in pywsgi: 127.0.0.1 - - [2025-03-17 06:28:40] "OPTIONS /results/check_overall/noVxDSkU4or38FzH HTTP/1.1" 200 340 0.000686
+2025-03-17 06:28:40,701 INFO: 127.0.0.1 - - [2025-03-17 06:28:40] "OPTIONS /results/check_overall/noVxDSkU4or38FzH HTTP/1.1" 200 340 0.000686 [in /home/ubuntu/miniconda3/envs/vit2/lib/python3.9/site-packages/gevent/pywsgi.py:1349]
+[2025-03-17 06:28:40,822] INFO in app_json: Received userid (db_name): noVxDSkU4or38FzH
+2025-03-17 06:28:40,822 INFO: Received userid (db_name): noVxDSkU4or38FzH [in /home/ubuntu/backend/app_json.py:458]
+[2025-03-17 06:28:40,993] INFO in pywsgi: 127.0.0.1 - - [2025-03-17 06:28:40] "POST /results/check_overall/noVxDSkU4or38FzH HTTP/1.1" 200 2667481 0.170562
+2025-03-17 06:28:40,993 INFO: 127.0.0.1 - - [2025-03-17 06:28:40] "POST /results/check_overall/noVxDSkU4or38FzH HTTP/1.1" 200 2667481 0.170562 [in /home/ubuntu/miniconda3/envs/vit2/lib/python3.9/site-packages/gevent/pywsgi.py:1349]
+[2025-03-17 06:28:49,904] INFO in pywsgi: 127.0.0.1 - - [2025-03-17 06:28:49] "OPTIONS /results/check_detailed/noVxDSkU4or38FzH HTTP/1.1" 200 340 0.000672
+2025-03-17 06:28:49,904 INFO: 127.0.0.1 - - [2025-03-17 06:28:49] "OPTIONS /results/check_detailed/noVxDSkU4or38FzH HTTP/1.1" 200 340 0.000672 [in /home/ubuntu/miniconda3/envs/vit2/lib/python3.9/site-packages/gevent/pywsgi.py:1349]
+[2025-03-17 06:28:50,035] INFO in app_json: Received userid (db_name): noVxDSkU4or38FzH
+2025-03-17 06:28:50,035 INFO: Received userid (db_name): noVxDSkU4or38FzH [in /home/ubuntu/backend/app_json.py:659]
+[2025-03-17 06:28:50,063] INFO in app_json: Original image data successfully retrieved and encoded for wall
+2025-03-17 06:28:50,063 INFO: Original image data successfully retrieved and encoded for wall [in /home/ubuntu/backend/app_json.py:706]
+[2025-03-17 06:28:50,066] INFO in app_json: Detected image data successfully retrieved and encoded for wall
+2025-03-17 06:28:50,066 INFO: Detected image data successfully retrieved and encoded for wall [in /home/ubuntu/backend/app_json.py:714]
+[2025-03-17 06:28:50,140] INFO in pywsgi: 127.0.0.1 - - [2025-03-17 06:28:50] "POST /results/check_detailed/noVxDSkU4or38FzH HTTP/1.1" 200 80607 0.104507
+2025-03-17 06:28:50,140 INFO: 127.0.0.1 - - [2025-03-17 06:28:50] "POST /results/check_detailed/noVxDSkU4or38FzH HTTP/1.1" 200 80607 0.104507 [in /home/ubuntu/miniconda3/envs/vit2/lib/python3.9/site-packages/gevent/pywsgi.py:1349]
+[2025-03-17 07:52:49,482] INFO in pywsgi: 127.0.0.1 - - [2025-03-17 07:52:49] "OPTIONS /get_user_id HTTP/1.1" 200 334 0.000559
+2025-03-17 07:52:49,482 INFO: 127.0.0.1 - - [2025-03-17 07:52:49] "OPTIONS /get_user_id HTTP/1.1" 200 334 0.000559 [in /home/ubuntu/miniconda3/envs/vit2/lib/python3.9/site-packages/gevent/pywsgi.py:1349]
+[2025-03-17 07:52:49,483] INFO in pywsgi: 127.0.0.1 - - [2025-03-17 07:52:49] "OPTIONS /get_user_id HTTP/1.1" 200 334 0.000412
+2025-03-17 07:52:49,483 INFO: 127.0.0.1 - - [2025-03-17 07:52:49] "OPTIONS /get_user_id HTTP/1.1" 200 334 0.000412 [in /home/ubuntu/miniconda3/envs/vit2/lib/python3.9/site-packages/gevent/pywsgi.py:1349]
+[2025-03-17 07:52:49,575] INFO in pywsgi: 127.0.0.1 - - [2025-03-17 07:52:49] "GET /get_user_id HTTP/1.1" 200 209 0.000608
+2025-03-17 07:52:49,575 INFO: 127.0.0.1 - - [2025-03-17 07:52:49] "GET /get_user_id HTTP/1.1" 200 209 0.000608 [in /home/ubuntu/miniconda3/envs/vit2/lib/python3.9/site-packages/gevent/pywsgi.py:1349]
+[2025-03-17 07:52:49,634] INFO in pywsgi: 127.0.0.1 - - [2025-03-17 07:52:49] "GET /get_user_id HTTP/1.1" 200 209 0.000593
+2025-03-17 07:52:49,634 INFO: 127.0.0.1 - - [2025-03-17 07:52:49] "GET /get_user_id HTTP/1.1" 200 209 0.000593 [in /home/ubuntu/miniconda3/envs/vit2/lib/python3.9/site-packages/gevent/pywsgi.py:1349]
+[2025-03-17 08:32:58,178] INFO in pywsgi: 127.0.0.1 - - [2025-03-17 08:32:58] "OPTIONS /get_user_id HTTP/1.1" 200 334 0.001511
+2025-03-17 08:32:58,178 INFO: 127.0.0.1 - - [2025-03-17 08:32:58] "OPTIONS /get_user_id HTTP/1.1" 200 334 0.001511 [in /home/ubuntu/miniconda3/envs/vit2/lib/python3.9/site-packages/gevent/pywsgi.py:1349]
+[2025-03-17 08:32:58,179] INFO in pywsgi: 127.0.0.1 - - [2025-03-17 08:32:58] "OPTIONS /get_user_id HTTP/1.1" 200 334 0.000365
+2025-03-17 08:32:58,179 INFO: 127.0.0.1 - - [2025-03-17 08:32:58] "OPTIONS /get_user_id HTTP/1.1" 200 334 0.000365 [in /home/ubuntu/miniconda3/envs/vit2/lib/python3.9/site-packages/gevent/pywsgi.py:1349]
+[2025-03-17 08:32:58,282] INFO in pywsgi: 127.0.0.1 - - [2025-03-17 08:32:58] "GET /get_user_id HTTP/1.1" 200 209 0.000566
+2025-03-17 08:32:58,282 INFO: 127.0.0.1 - - [2025-03-17 08:32:58] "GET /get_user_id HTTP/1.1" 200 209 0.000566 [in /home/ubuntu/miniconda3/envs/vit2/lib/python3.9/site-packages/gevent/pywsgi.py:1349]
+[2025-03-17 08:32:58,349] INFO in pywsgi: 127.0.0.1 - - [2025-03-17 08:32:58] "GET /get_user_id HTTP/1.1" 200 209 0.000768
+2025-03-17 08:32:58,349 INFO: 127.0.0.1 - - [2025-03-17 08:32:58] "GET /get_user_id HTTP/1.1" 200 209 0.000768 [in /home/ubuntu/miniconda3/envs/vit2/lib/python3.9/site-packages/gevent/pywsgi.py:1349]
+[2025-03-17 08:57:09,765] INFO in pywsgi: 127.0.0.1 - - [2025-03-17 08:57:09] "OPTIONS /get_user_id HTTP/1.1" 200 334 0.000547
+2025-03-17 08:57:09,765 INFO: 127.0.0.1 - - [2025-03-17 08:57:09] "OPTIONS /get_user_id HTTP/1.1" 200 334 0.000547 [in /home/ubuntu/miniconda3/envs/vit2/lib/python3.9/site-packages/gevent/pywsgi.py:1349]
+[2025-03-17 08:57:09,766] INFO in pywsgi: 127.0.0.1 - - [2025-03-17 08:57:09] "OPTIONS /get_user_id HTTP/1.1" 200 334 0.000347
+2025-03-17 08:57:09,766 INFO: 127.0.0.1 - - [2025-03-17 08:57:09] "OPTIONS /get_user_id HTTP/1.1" 200 334 0.000347 [in /home/ubuntu/miniconda3/envs/vit2/lib/python3.9/site-packages/gevent/pywsgi.py:1349]
+[2025-03-17 08:57:11,427] INFO in pywsgi: 127.0.0.1 - - [2025-03-17 08:57:11] "GET /get_user_id HTTP/1.1" 200 209 0.000572
+2025-03-17 08:57:11,427 INFO: 127.0.0.1 - - [2025-03-17 08:57:11] "GET /get_user_id HTTP/1.1" 200 209 0.000572 [in /home/ubuntu/miniconda3/envs/vit2/lib/python3.9/site-packages/gevent/pywsgi.py:1349]
+[2025-03-17 08:57:11,561] INFO in pywsgi: 127.0.0.1 - - [2025-03-17 08:57:11] "GET /get_user_id HTTP/1.1" 200 209 0.000542
+2025-03-17 08:57:11,561 INFO: 127.0.0.1 - - [2025-03-17 08:57:11] "GET /get_user_id HTTP/1.1" 200 209 0.000542 [in /home/ubuntu/miniconda3/envs/vit2/lib/python3.9/site-packages/gevent/pywsgi.py:1349]
+[2025-03-17 08:57:42,954] INFO in pywsgi: 127.0.0.1 - - [2025-03-17 08:57:42] "OPTIONS /get_user_id HTTP/1.1" 200 334 0.000549
+2025-03-17 08:57:42,954 INFO: 127.0.0.1 - - [2025-03-17 08:57:42] "OPTIONS /get_user_id HTTP/1.1" 200 334 0.000549 [in /home/ubuntu/miniconda3/envs/vit2/lib/python3.9/site-packages/gevent/pywsgi.py:1349]
+[2025-03-17 08:57:42,958] INFO in pywsgi: 127.0.0.1 - - [2025-03-17 08:57:42] "OPTIONS /get_user_id HTTP/1.1" 200 334 0.000409
+2025-03-17 08:57:42,958 INFO: 127.0.0.1 - - [2025-03-17 08:57:42] "OPTIONS /get_user_id HTTP/1.1" 200 334 0.000409 [in /home/ubuntu/miniconda3/envs/vit2/lib/python3.9/site-packages/gevent/pywsgi.py:1349]
+[2025-03-17 08:57:43,048] INFO in pywsgi: 127.0.0.1 - - [2025-03-17 08:57:43] "GET /get_user_id HTTP/1.1" 200 209 0.000602
+2025-03-17 08:57:43,048 INFO: 127.0.0.1 - - [2025-03-17 08:57:43] "GET /get_user_id HTTP/1.1" 200 209 0.000602 [in /home/ubuntu/miniconda3/envs/vit2/lib/python3.9/site-packages/gevent/pywsgi.py:1349]
+[2025-03-17 08:57:43,101] INFO in pywsgi: 127.0.0.1 - - [2025-03-17 08:57:43] "GET /get_user_id HTTP/1.1" 200 209 0.000602
+2025-03-17 08:57:43,101 INFO: 127.0.0.1 - - [2025-03-17 08:57:43] "GET /get_user_id HTTP/1.1" 200 209 0.000602 [in /home/ubuntu/miniconda3/envs/vit2/lib/python3.9/site-packages/gevent/pywsgi.py:1349]
+[2025-03-17 08:57:56,632] INFO in pywsgi: 127.0.0.1 - - [2025-03-17 08:57:56] "OPTIONS /image HTTP/1.1" 200 340 0.000605
+2025-03-17 08:57:56,632 INFO: 127.0.0.1 - - [2025-03-17 08:57:56] "OPTIONS /image HTTP/1.1" 200 340 0.000605 [in /home/ubuntu/miniconda3/envs/vit2/lib/python3.9/site-packages/gevent/pywsgi.py:1349]
+[2025-03-17 08:57:56,706] INFO in app_json: Received POST request to /image
+2025-03-17 08:57:56,706 INFO: Received POST request to /image [in /home/ubuntu/backend/app_json.py:277]
+[2025-03-17 08:57:56,707] INFO in app_json: Request headers: Content-Type: multipart/form-data; boundary=----WebKitFormBoundaryfSeyd9a83no8dH0f
+Content-Length: 99988
+Host: cbd6-54-249-94-192.ngrok-free.app
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36
+Accept: application/json
+Accept-Encoding: gzip, deflate, br, zstd
+Accept-Language: zh-TW,zh;q=0.9,ja;q=0.8,en-US;q=0.7,en;q=0.6
+Ngrok-Skip-Browser-Warning: true
+Origin: https://marcelab.caece.net
+Priority: u=1, i
+Referer: https://marcelab.caece.net/
+Sec-Ch-Ua: "Chromium";v="134", "Not:A-Brand";v="24", "Google Chrome";v="134"
+Sec-Ch-Ua-Mobile: ?0
+Sec-Ch-Ua-Platform: "Windows"
+Sec-Fetch-Dest: empty
+Sec-Fetch-Mode: cors
+Sec-Fetch-Site: cross-site
+X-Forwarded-For: 140.112.12.156
+X-Forwarded-Host: cbd6-54-249-94-192.ngrok-free.app
+X-Forwarded-Proto: https
+
+
+2025-03-17 08:57:56,707 INFO: Request headers: Content-Type: multipart/form-data; boundary=----WebKitFormBoundaryfSeyd9a83no8dH0f
+Content-Length: 99988
+Host: cbd6-54-249-94-192.ngrok-free.app
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36
+Accept: application/json
+Accept-Encoding: gzip, deflate, br, zstd
+Accept-Language: zh-TW,zh;q=0.9,ja;q=0.8,en-US;q=0.7,en;q=0.6
+Ngrok-Skip-Browser-Warning: true
+Origin: https://marcelab.caece.net
+Priority: u=1, i
+Referer: https://marcelab.caece.net/
+Sec-Ch-Ua: "Chromium";v="134", "Not:A-Brand";v="24", "Google Chrome";v="134"
+Sec-Ch-Ua-Mobile: ?0
+Sec-Ch-Ua-Platform: "Windows"
+Sec-Fetch-Dest: empty
+Sec-Fetch-Mode: cors
+Sec-Fetch-Site: cross-site
+X-Forwarded-For: 140.112.12.156
+X-Forwarded-Host: cbd6-54-249-94-192.ngrok-free.app
+X-Forwarded-Proto: https
+
+ [in /home/ubuntu/backend/app_json.py:278]
+[2025-03-17 08:57:56,796] INFO in app_json: Request files: ImmutableMultiDict([('file', <FileStorage: 'photo_0.jpg' ('image/jpeg')>)])
+2025-03-17 08:57:56,796 INFO: Request files: ImmutableMultiDict([('file', <FileStorage: 'photo_0.jpg' ('image/jpeg')>)]) [in /home/ubuntu/backend/app_json.py:279]
+[2025-03-17 08:57:56,797] INFO in app_json: Request form: ImmutableMultiDict([('userId', 'q6zd3qFllUgveTHg'), ('detectionType', 'wall'), ('CE_state', 'false')])
+2025-03-17 08:57:56,797 INFO: Request form: ImmutableMultiDict([('userId', 'q6zd3qFllUgveTHg'), ('detectionType', 'wall'), ('CE_state', 'false')]) [in /home/ubuntu/backend/app_json.py:280]
+[2025-03-17 08:57:56,797] INFO in app_json: request:<Request 'https://cbd6-54-249-94-192.ngrok-free.app/image' [POST]>
+2025-03-17 08:57:56,797 INFO: request:<Request 'https://cbd6-54-249-94-192.ngrok-free.app/image' [POST]> [in /home/ubuntu/backend/app_json.py:285]
+[2025-03-17 08:57:56,797] INFO in app_json: file: <FileStorage: 'photo_0.jpg' ('image/jpeg')>
+2025-03-17 08:57:56,797 INFO: file: <FileStorage: 'photo_0.jpg' ('image/jpeg')> [in /home/ubuntu/backend/app_json.py:290]
+[2025-03-17 08:57:56,797] INFO in app_json: Ratio:0
+2025-03-17 08:57:56,797 INFO: Ratio:0 [in /home/ubuntu/backend/app_json.py:300]
+[2025-03-17 08:57:56,820] INFO in app_json: Created collection: column in database: q6zd3qFllUgveTHg
+2025-03-17 08:57:56,820 INFO: Created collection: column in database: q6zd3qFllUgveTHg [in /home/ubuntu/backend/app_json.py:314]
+[2025-03-17 08:57:56,840] INFO in app_json: Created collection: beam in database: q6zd3qFllUgveTHg
+2025-03-17 08:57:56,840 INFO: Created collection: beam in database: q6zd3qFllUgveTHg [in /home/ubuntu/backend/app_json.py:314]
+[2025-03-17 08:57:56,866] INFO in app_json: Created collection: wall in database: q6zd3qFllUgveTHg
+2025-03-17 08:57:56,866 INFO: Created collection: wall in database: q6zd3qFllUgveTHg [in /home/ubuntu/backend/app_json.py:314]
+[2025-03-17 08:57:56,874] INFO in app_json: Ratio:0
+2025-03-17 08:57:56,874 INFO: Ratio:0 [in /home/ubuntu/backend/app_json.py:336]
+[2025-03-17 08:57:56,874] INFO in app_json: costEstimation:False
+2025-03-17 08:57:56,874 INFO: costEstimation:False [in /home/ubuntu/backend/app_json.py:337]
+[2025-03-17 08:57:56,874] INFO in app_json: Performing image quality check
+2025-03-17 08:57:56,874 INFO: Performing image quality check [in /home/ubuntu/backend/app_json.py:338]
+[2025-03-17 08:57:57,019] INFO in app_json: test
+2025-03-17 08:57:57,019 INFO: test [in /home/ubuntu/backend/app_json.py:343]
+[2025-03-17 08:57:57,020] INFO in app_json: Performing damage classification
+2025-03-17 08:57:57,020 INFO: Performing damage classification [in /home/ubuntu/backend/app_json.py:348]
+[2025-03-17 08:57:57,318] INFO in app_json: Performing damage detection
+2025-03-17 08:57:57,318 INFO: Performing damage detection [in /home/ubuntu/backend/app_json.py:351]
+
+0: 640x640 1 Cracks, 1944.5ms
+Speed: 2.7ms preprocess, 1944.5ms inference, 1.5ms postprocess per image at shape (1, 3, 640, 640)
+Detected classes: ['Cracks']
+classification result: ['Horizontal']
+[2025-03-17 08:57:59,577] INFO in app_json: Performing Reason check
+2025-03-17 08:57:59,577 INFO: Performing Reason check [in /home/ubuntu/backend/app_json.py:356]
+[2025-03-17 08:57:59,577] INFO in app_json: Model complete
+2025-03-17 08:57:59,577 INFO: Model complete [in /home/ubuntu/backend/app_json.py:358]
+[2025-03-17 08:57:59,649] INFO in app_json: Resizing detected image to 640x640
+2025-03-17 08:57:59,649 INFO: Resizing detected image to 640x640 [in /home/ubuntu/backend/app_json.py:365]
+[2025-03-17 08:57:59,667] INFO in app_json: Classification complete, storing result in database
+2025-03-17 08:57:59,667 INFO: Classification complete, storing result in database [in /home/ubuntu/backend/app_json.py:377]
+[2025-03-17 08:57:59,668] INFO in app_json: <Response 288 bytes [200 OK]>
+2025-03-17 08:57:59,668 INFO: <Response 288 bytes [200 OK]> [in /home/ubuntu/backend/app_json.py:420]
+[2025-03-17 08:57:59,668] INFO in pywsgi: 127.0.0.1 - - [2025-03-17 08:57:59] "POST /image HTTP/1.1" 200 429 2.961773
+2025-03-17 08:57:59,668 INFO: 127.0.0.1 - - [2025-03-17 08:57:59] "POST /image HTTP/1.1" 200 429 2.961773 [in /home/ubuntu/miniconda3/envs/vit2/lib/python3.9/site-packages/gevent/pywsgi.py:1349]
+[2025-03-17 08:58:51,855] INFO in pywsgi: 127.0.0.1 - - [2025-03-17 08:58:51] "OPTIONS /results/check_overall/q6zd3qFllUgveTHg HTTP/1.1" 200 340 0.000596
+2025-03-17 08:58:51,855 INFO: 127.0.0.1 - - [2025-03-17 08:58:51] "OPTIONS /results/check_overall/q6zd3qFllUgveTHg HTTP/1.1" 200 340 0.000596 [in /home/ubuntu/miniconda3/envs/vit2/lib/python3.9/site-packages/gevent/pywsgi.py:1349]
+[2025-03-17 08:58:51,957] INFO in app_json: Received userid (db_name): q6zd3qFllUgveTHg
+2025-03-17 08:58:51,957 INFO: Received userid (db_name): q6zd3qFllUgveTHg [in /home/ubuntu/backend/app_json.py:458]
+[2025-03-17 08:58:51,982] INFO in pywsgi: 127.0.0.1 - - [2025-03-17 08:58:51] "POST /results/check_overall/q6zd3qFllUgveTHg HTTP/1.1" 200 2781493 0.025608
+2025-03-17 08:58:51,982 INFO: 127.0.0.1 - - [2025-03-17 08:58:51] "POST /results/check_overall/q6zd3qFllUgveTHg HTTP/1.1" 200 2781493 0.025608 [in /home/ubuntu/miniconda3/envs/vit2/lib/python3.9/site-packages/gevent/pywsgi.py:1349]
+[2025-03-17 09:22:04,197] INFO in pywsgi: 127.0.0.1 - - [2025-03-17 09:22:04] "OPTIONS /get_user_id HTTP/1.1" 200 334 0.000505
+2025-03-17 09:22:04,197 INFO: 127.0.0.1 - - [2025-03-17 09:22:04] "OPTIONS /get_user_id HTTP/1.1" 200 334 0.000505 [in /home/ubuntu/miniconda3/envs/vit2/lib/python3.9/site-packages/gevent/pywsgi.py:1349]
+[2025-03-17 09:22:04,201] INFO in pywsgi: 127.0.0.1 - - [2025-03-17 09:22:04] "OPTIONS /get_user_id HTTP/1.1" 200 334 0.000419
+2025-03-17 09:22:04,201 INFO: 127.0.0.1 - - [2025-03-17 09:22:04] "OPTIONS /get_user_id HTTP/1.1" 200 334 0.000419 [in /home/ubuntu/miniconda3/envs/vit2/lib/python3.9/site-packages/gevent/pywsgi.py:1349]
+[2025-03-17 09:22:04,446] INFO in pywsgi: 127.0.0.1 - - [2025-03-17 09:22:04] "GET /get_user_id HTTP/1.1" 200 209 0.000612
+2025-03-17 09:22:04,446 INFO: 127.0.0.1 - - [2025-03-17 09:22:04] "GET /get_user_id HTTP/1.1" 200 209 0.000612 [in /home/ubuntu/miniconda3/envs/vit2/lib/python3.9/site-packages/gevent/pywsgi.py:1349]
+[2025-03-17 09:22:04,447] INFO in pywsgi: 127.0.0.1 - - [2025-03-17 09:22:04] "GET /get_user_id HTTP/1.1" 200 209 0.000379
+2025-03-17 09:22:04,447 INFO: 127.0.0.1 - - [2025-03-17 09:22:04] "GET /get_user_id HTTP/1.1" 200 209 0.000379 [in /home/ubuntu/miniconda3/envs/vit2/lib/python3.9/site-packages/gevent/pywsgi.py:1349]
+[2025-03-17 09:22:14,018] INFO in pywsgi: 127.0.0.1 - - [2025-03-17 09:22:14] "OPTIONS /get_user_id HTTP/1.1" 200 334 0.000885
+2025-03-17 09:22:14,018 INFO: 127.0.0.1 - - [2025-03-17 09:22:14] "OPTIONS /get_user_id HTTP/1.1" 200 334 0.000885 [in /home/ubuntu/miniconda3/envs/vit2/lib/python3.9/site-packages/gevent/pywsgi.py:1349]
+[2025-03-17 09:22:14,019] INFO in pywsgi: 127.0.0.1 - - [2025-03-17 09:22:14] "OPTIONS /get_user_id HTTP/1.1" 200 334 0.000350
+2025-03-17 09:22:14,019 INFO: 127.0.0.1 - - [2025-03-17 09:22:14] "OPTIONS /get_user_id HTTP/1.1" 200 334 0.000350 [in /home/ubuntu/miniconda3/envs/vit2/lib/python3.9/site-packages/gevent/pywsgi.py:1349]
+[2025-03-17 09:22:14,171] INFO in pywsgi: 127.0.0.1 - - [2025-03-17 09:22:14] "GET /get_user_id HTTP/1.1" 200 209 0.000595
+2025-03-17 09:22:14,171 INFO: 127.0.0.1 - - [2025-03-17 09:22:14] "GET /get_user_id HTTP/1.1" 200 209 0.000595 [in /home/ubuntu/miniconda3/envs/vit2/lib/python3.9/site-packages/gevent/pywsgi.py:1349]
+[2025-03-17 09:22:14,281] INFO in pywsgi: 127.0.0.1 - - [2025-03-17 09:22:14] "GET /get_user_id HTTP/1.1" 200 209 0.000568
+2025-03-17 09:22:14,281 INFO: 127.0.0.1 - - [2025-03-17 09:22:14] "GET /get_user_id HTTP/1.1" 200 209 0.000568 [in /home/ubuntu/miniconda3/envs/vit2/lib/python3.9/site-packages/gevent/pywsgi.py:1349]
+[2025-03-17 09:22:28,454] INFO in pywsgi: 127.0.0.1 - - [2025-03-17 09:22:28] "OPTIONS /get_user_id HTTP/1.1" 200 334 0.000614
+2025-03-17 09:22:28,454 INFO: 127.0.0.1 - - [2025-03-17 09:22:28] "OPTIONS /get_user_id HTTP/1.1" 200 334 0.000614 [in /home/ubuntu/miniconda3/envs/vit2/lib/python3.9/site-packages/gevent/pywsgi.py:1349]
+[2025-03-17 09:22:28,455] INFO in pywsgi: 127.0.0.1 - - [2025-03-17 09:22:28] "OPTIONS /get_user_id HTTP/1.1" 200 334 0.000360
+2025-03-17 09:22:28,455 INFO: 127.0.0.1 - - [2025-03-17 09:22:28] "OPTIONS /get_user_id HTTP/1.1" 200 334 0.000360 [in /home/ubuntu/miniconda3/envs/vit2/lib/python3.9/site-packages/gevent/pywsgi.py:1349]
+[2025-03-17 09:22:28,564] INFO in pywsgi: 127.0.0.1 - - [2025-03-17 09:22:28] "GET /get_user_id HTTP/1.1" 200 209 0.000571
+2025-03-17 09:22:28,564 INFO: 127.0.0.1 - - [2025-03-17 09:22:28] "GET /get_user_id HTTP/1.1" 200 209 0.000571 [in /home/ubuntu/miniconda3/envs/vit2/lib/python3.9/site-packages/gevent/pywsgi.py:1349]
+[2025-03-17 09:22:28,694] INFO in pywsgi: 127.0.0.1 - - [2025-03-17 09:22:28] "GET /get_user_id HTTP/1.1" 200 209 0.000569
+2025-03-17 09:22:28,694 INFO: 127.0.0.1 - - [2025-03-17 09:22:28] "GET /get_user_id HTTP/1.1" 200 209 0.000569 [in /home/ubuntu/miniconda3/envs/vit2/lib/python3.9/site-packages/gevent/pywsgi.py:1349]
+[2025-03-17 09:22:54,929] INFO in pywsgi: 127.0.0.1 - - [2025-03-17 09:22:54] "OPTIONS /get_user_id HTTP/1.1" 200 334 0.000539
+2025-03-17 09:22:54,929 INFO: 127.0.0.1 - - [2025-03-17 09:22:54] "OPTIONS /get_user_id HTTP/1.1" 200 334 0.000539 [in /home/ubuntu/miniconda3/envs/vit2/lib/python3.9/site-packages/gevent/pywsgi.py:1349]
+[2025-03-17 09:22:54,931] INFO in pywsgi: 127.0.0.1 - - [2025-03-17 09:22:54] "OPTIONS /get_user_id HTTP/1.1" 200 334 0.000394
+2025-03-17 09:22:54,931 INFO: 127.0.0.1 - - [2025-03-17 09:22:54] "OPTIONS /get_user_id HTTP/1.1" 200 334 0.000394 [in /home/ubuntu/miniconda3/envs/vit2/lib/python3.9/site-packages/gevent/pywsgi.py:1349]
+[2025-03-17 09:22:55,167] INFO in pywsgi: 127.0.0.1 - - [2025-03-17 09:22:55] "GET /get_user_id HTTP/1.1" 200 209 0.000518
+2025-03-17 09:22:55,167 INFO: 127.0.0.1 - - [2025-03-17 09:22:55] "GET /get_user_id HTTP/1.1" 200 209 0.000518 [in /home/ubuntu/miniconda3/envs/vit2/lib/python3.9/site-packages/gevent/pywsgi.py:1349]
+[2025-03-17 09:22:55,168] INFO in pywsgi: 127.0.0.1 - - [2025-03-17 09:22:55] "GET /get_user_id HTTP/1.1" 200 209 0.000737
+2025-03-17 09:22:55,168 INFO: 127.0.0.1 - - [2025-03-17 09:22:55] "GET /get_user_id HTTP/1.1" 200 209 0.000737 [in /home/ubuntu/miniconda3/envs/vit2/lib/python3.9/site-packages/gevent/pywsgi.py:1349]
+[2025-03-17 14:31:48,568] INFO in pywsgi: 127.0.0.1 - - [2025-03-17 14:31:48] "OPTIONS /get_user_id HTTP/1.1" 200 334 0.000958
+2025-03-17 14:31:48,568 INFO: 127.0.0.1 - - [2025-03-17 14:31:48] "OPTIONS /get_user_id HTTP/1.1" 200 334 0.000958 [in /home/ubuntu/miniconda3/envs/vit2/lib/python3.9/site-packages/gevent/pywsgi.py:1349]
+[2025-03-17 14:31:48,569] INFO in pywsgi: 127.0.0.1 - - [2025-03-17 14:31:48] "OPTIONS /get_user_id HTTP/1.1" 200 334 0.000382
+2025-03-17 14:31:48,569 INFO: 127.0.0.1 - - [2025-03-17 14:31:48] "OPTIONS /get_user_id HTTP/1.1" 200 334 0.000382 [in /home/ubuntu/miniconda3/envs/vit2/lib/python3.9/site-packages/gevent/pywsgi.py:1349]
+[2025-03-17 14:31:48,654] INFO in pywsgi: 127.0.0.1 - - [2025-03-17 14:31:48] "GET /get_user_id HTTP/1.1" 200 209 0.000621
+2025-03-17 14:31:48,654 INFO: 127.0.0.1 - - [2025-03-17 14:31:48] "GET /get_user_id HTTP/1.1" 200 209 0.000621 [in /home/ubuntu/miniconda3/envs/vit2/lib/python3.9/site-packages/gevent/pywsgi.py:1349]
+[2025-03-17 14:31:48,655] INFO in pywsgi: 127.0.0.1 - - [2025-03-17 14:31:48] "GET /get_user_id HTTP/1.1" 200 209 0.000407
+2025-03-17 14:31:48,655 INFO: 127.0.0.1 - - [2025-03-17 14:31:48] "GET /get_user_id HTTP/1.1" 200 209 0.000407 [in /home/ubuntu/miniconda3/envs/vit2/lib/python3.9/site-packages/gevent/pywsgi.py:1349]
+[2025-03-17 14:32:32,702] INFO in pywsgi: 127.0.0.1 - - [2025-03-17 14:32:32] "OPTIONS /get_user_id HTTP/1.1" 200 334 0.001160
+2025-03-17 14:32:32,702 INFO: 127.0.0.1 - - [2025-03-17 14:32:32] "OPTIONS /get_user_id HTTP/1.1" 200 334 0.001160 [in /home/ubuntu/miniconda3/envs/vit2/lib/python3.9/site-packages/gevent/pywsgi.py:1349]
+[2025-03-17 14:32:32,703] INFO in pywsgi: 127.0.0.1 - - [2025-03-17 14:32:32] "OPTIONS /get_user_id HTTP/1.1" 200 334 0.000531
+2025-03-17 14:32:32,703 INFO: 127.0.0.1 - - [2025-03-17 14:32:32] "OPTIONS /get_user_id HTTP/1.1" 200 334 0.000531 [in /home/ubuntu/miniconda3/envs/vit2/lib/python3.9/site-packages/gevent/pywsgi.py:1349]
+[2025-03-17 14:32:32,753] INFO in pywsgi: 127.0.0.1 - - [2025-03-17 14:32:32] "GET /get_user_id HTTP/1.1" 200 209 0.000566
+2025-03-17 14:32:32,753 INFO: 127.0.0.1 - - [2025-03-17 14:32:32] "GET /get_user_id HTTP/1.1" 200 209 0.000566 [in /home/ubuntu/miniconda3/envs/vit2/lib/python3.9/site-packages/gevent/pywsgi.py:1349]
+[2025-03-17 14:32:32,754] INFO in pywsgi: 127.0.0.1 - - [2025-03-17 14:32:32] "GET /get_user_id HTTP/1.1" 200 209 0.000360
+2025-03-17 14:32:32,754 INFO: 127.0.0.1 - - [2025-03-17 14:32:32] "GET /get_user_id HTTP/1.1" 200 209 0.000360 [in /home/ubuntu/miniconda3/envs/vit2/lib/python3.9/site-packages/gevent/pywsgi.py:1349]
+[2025-03-17 17:39:09,008] INFO in pywsgi: 127.0.0.1 - - [2025-03-17 17:39:09] "OPTIONS /get_user_id HTTP/1.1" 200 334 0.000504
+2025-03-17 17:39:09,008 INFO: 127.0.0.1 - - [2025-03-17 17:39:09] "OPTIONS /get_user_id HTTP/1.1" 200 334 0.000504 [in /home/ubuntu/miniconda3/envs/vit2/lib/python3.9/site-packages/gevent/pywsgi.py:1349]
+[2025-03-17 17:39:09,010] INFO in pywsgi: 127.0.0.1 - - [2025-03-17 17:39:09] "OPTIONS /get_user_id HTTP/1.1" 200 334 0.000335
+2025-03-17 17:39:09,010 INFO: 127.0.0.1 - - [2025-03-17 17:39:09] "OPTIONS /get_user_id HTTP/1.1" 200 334 0.000335 [in /home/ubuntu/miniconda3/envs/vit2/lib/python3.9/site-packages/gevent/pywsgi.py:1349]
+[2025-03-17 17:39:09,131] INFO in pywsgi: 127.0.0.1 - - [2025-03-17 17:39:09] "GET /get_user_id HTTP/1.1" 200 209 0.000538
+2025-03-17 17:39:09,131 INFO: 127.0.0.1 - - [2025-03-17 17:39:09] "GET /get_user_id HTTP/1.1" 200 209 0.000538 [in /home/ubuntu/miniconda3/envs/vit2/lib/python3.9/site-packages/gevent/pywsgi.py:1349]
+[2025-03-17 17:39:09,231] INFO in pywsgi: 127.0.0.1 - - [2025-03-17 17:39:09] "GET /get_user_id HTTP/1.1" 200 209 0.000942
+2025-03-17 17:39:09,231 INFO: 127.0.0.1 - - [2025-03-17 17:39:09] "GET /get_user_id HTTP/1.1" 200 209 0.000942 [in /home/ubuntu/miniconda3/envs/vit2/lib/python3.9/site-packages/gevent/pywsgi.py:1349]
+[2025-03-18 06:16:05,318] INFO in pywsgi: 127.0.0.1 - - [2025-03-18 06:16:05] "OPTIONS /get_user_id HTTP/1.1" 200 334 0.000527
+2025-03-18 06:16:05,318 INFO: 127.0.0.1 - - [2025-03-18 06:16:05] "OPTIONS /get_user_id HTTP/1.1" 200 334 0.000527 [in /home/ubuntu/miniconda3/envs/vit2/lib/python3.9/site-packages/gevent/pywsgi.py:1349]
+[2025-03-18 06:16:05,319] INFO in pywsgi: 127.0.0.1 - - [2025-03-18 06:16:05] "OPTIONS /get_user_id HTTP/1.1" 200 334 0.000361
+2025-03-18 06:16:05,319 INFO: 127.0.0.1 - - [2025-03-18 06:16:05] "OPTIONS /get_user_id HTTP/1.1" 200 334 0.000361 [in /home/ubuntu/miniconda3/envs/vit2/lib/python3.9/site-packages/gevent/pywsgi.py:1349]
+[2025-03-18 06:16:05,414] INFO in pywsgi: 127.0.0.1 - - [2025-03-18 06:16:05] "GET /get_user_id HTTP/1.1" 200 209 0.000589
+2025-03-18 06:16:05,414 INFO: 127.0.0.1 - - [2025-03-18 06:16:05] "GET /get_user_id HTTP/1.1" 200 209 0.000589 [in /home/ubuntu/miniconda3/envs/vit2/lib/python3.9/site-packages/gevent/pywsgi.py:1349]
+[2025-03-18 06:16:05,415] INFO in pywsgi: 127.0.0.1 - - [2025-03-18 06:16:05] "GET /get_user_id HTTP/1.1" 200 209 0.000386
+2025-03-18 06:16:05,415 INFO: 127.0.0.1 - - [2025-03-18 06:16:05] "GET /get_user_id HTTP/1.1" 200 209 0.000386 [in /home/ubuntu/miniconda3/envs/vit2/lib/python3.9/site-packages/gevent/pywsgi.py:1349]
