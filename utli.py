@@ -216,8 +216,8 @@ def DamageClassification(img, model):
 
 
 
-def Infer_spallingSeg(model, img, device = 'cpu'):
-
+def Infer_spallingSeg(model, img ):
+    device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
     def predict(image):
         image = image.unsqueeze(0)
         h, w = image.shape[-2:]
@@ -267,7 +267,7 @@ def DamageDetection(img,image_cv, model_detection,model_crackClassification,dete
     original_img=copy.deepcopy(image_cv)
     # configuration for crack classfication model
     # model_crackClassification.eval()
-    size = (384, 384)
+    std_size = (384, 384)
     id2label_mapping = {
     'wall': None,
     'column': None,
@@ -303,7 +303,9 @@ def DamageDetection(img,image_cv, model_detection,model_crackClassification,dete
     #model = YOLO('runs/detect/9e/weights/best.pt')
     #img = cv2.imread("datasets/test/images/cracking217_jpg.rf.03ff1acc26afb21d3be1f1eed68f5c0c.jpg")
     print(f"orginal image size{img.size}")
+    # YOLO use (640,448) as input size
     results = model_detection(img, conf = 0.2)
+ 
 
     boxes = results[0].boxes
     classes = results[0].boxes.cls.tolist()
@@ -322,8 +324,8 @@ def DamageDetection(img,image_cv, model_detection,model_crackClassification,dete
             cropped_img.convert('RGB')
             cropped_image = np.array(cropped_img)
             cropped_image = cv2.cvtColor(cropped_image, cv2.COLOR_RGB2BGR)
-            cv2.imwrite(f'./resultImages/originalCropped{boxIndex}.jpg', cropped_image)
-            resized_img = resize_and_pad_image(cropped_img, size)
+            cv2.imwrite(f'./modelTest/resultImages/originalCropped{boxIndex}.jpg', cropped_image)
+            resized_img = resize_and_pad_image(cropped_img, std_size)
             transformed_img = transform(resized_img).unsqueeze(0)
             
             # Get model predictions
@@ -345,13 +347,16 @@ def DamageDetection(img,image_cv, model_detection,model_crackClassification,dete
                         (x1, y1 + 10), cv2.FONT_HERSHEY_COMPLEX, 1, (255, 0, 0), 1)
             if CE:
                 # cost estimation for this cropped crack image
-                size = cropped_image.shape
+                
+                ori_size = (cropped_image.shape[1], cropped_image.shape[0])  # (width, height)
+                # resize the cropped image to the original size by the propotion of the first resize(orignal to 312)
+
                 print(f"original size: {cropped_image.shape}")
                 patch_result, full_result = crack_segmentation(cropped_img,model_crackSeg)
                 result_crack_seg = (full_result * 255).astype(np.uint8)
-                cv2.imwrite(f'./resultImages/crackSeg{boxIndex}.jpg', result_crack_seg)
-                result_crack_seg = cv2.resize(result_crack_seg, size)
-                print(f"re-size: {result_crack_seg.shape}")
+                cv2.imwrite(f'./modelTest/resultImages/crackSeg{boxIndex}.jpg', result_crack_seg)
+                result_crack_seg = cv2.resize(result_crack_seg, ori_size)
+                print(f"re-size after crack seg: {result_crack_seg.shape}")
                 white = count_white_pixels(result_crack_seg)
 
                 # cost for crack
@@ -387,15 +392,18 @@ def DamageDetection(img,image_cv, model_detection,model_crackClassification,dete
             cropped_img.convert('RGB')
             cropped_image = np.array(cropped_img)
             cropped_image = cv2.cvtColor(cropped_image, cv2.COLOR_RGB2BGR)
-            cv2.imwrite(f'./resultImages/originalCropped{boxIndex}.jpg', cropped_image)
+            cv2.imwrite(f'./modelTest/resultImages/originalCropped{boxIndex}.jpg', cropped_image)
             if CE:
                 # cost estimation for this cropped spalling image
-                size = cropped_image.shape
+                ori_size = (cropped_image.shape[1], cropped_image.shape[0])  # (width, height)
+                # resize the cropped image to the original size by the propotion of the first resize(orignal to 312)
+
                 print(f"original size: {cropped_image.shape}")
                 result_spalling_seg = Infer_spallingSeg(model_spallingSeg, cropped_img)
-                cv2.imwrite(f'./resultImages/spallingSeg{boxIndex}.jpg', result_spalling_seg)
-                result_spalling_seg = cv2.resize(result_spalling_seg, size)
-                print(f"re-size: {result_crack_seg.shape}")
+                result_spalling_seg = result_spalling_seg.astype(np.uint8)
+                result_spalling_seg = cv2.resize(result_spalling_seg, ori_size, interpolation=cv2.INTER_NEAREST)
+                cv2.imwrite(f'./modelTest/resultImages/spallingSeg{boxIndex}.jpg', result_spalling_seg)
+                print(f"re-size after spalling seg: {result_spalling_seg.shape}")
                 white = count_white_pixels(result_spalling_seg)
                 total_cost_spalling += white * ratio* cost_spalling / 32400 # 每坪32400 cm^2
             
@@ -415,7 +423,7 @@ def DamageDetection(img,image_cv, model_detection,model_crackClassification,dete
     print("Detected classes:", detection_result)
     print("classification result:", total_result)
     rgb_image = cv2.cvtColor(image_cv, cv2.COLOR_BGR2RGB)
-    cv2.imwrite(f'./resultImages/detectResult.jpg', rgb_image)
+    cv2.imwrite(f'./modelTest/resultImages/detectResult.jpg', rgb_image)
     detected_img = Image.fromarray(rgb_image)
 
     return total_result, original_img, detected_img, total_cost_crack,total_cost_spalling, total_cost_rebar
