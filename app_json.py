@@ -40,6 +40,7 @@ EXCEL_EXPORT_PATH = os.path.join(EXPORT_FOLDER, 'test_database.xlsx')
 IMAGE_DOWNLOAD_PATH = './images'  # Folder to temporarily store images
 
 app = Flask(__name__)
+app.register_blueprint(opensfm_api)
 
 # Load SSL context
 context = ssl.SSLContext(ssl.PROTOCOL_TLS)
@@ -734,6 +735,7 @@ def check_detailed_results(userid):
         print(error_message)
         app.logger.error(f"An error occurred: {str(error_message)}")
         return jsonify({"error": "Internal server error", "details": str(error_message)}), 500
+
 
 @app.route("/export_excel", methods=['GET'])
 def export_to_excel():
