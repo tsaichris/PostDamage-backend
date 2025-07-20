@@ -27,6 +27,7 @@ import string
 import copy
 import ssl
 import traceback
+from opensfm_api import opensfm_api
 
 import segmentation_models_pytorch_3branch as smp_3b
 from crackSeg_utils import load_unet_vgg16
