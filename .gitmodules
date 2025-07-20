@@ -1,0 +1,3 @@
+[submodule "OpenSfM"]
+	path = OpenSfM
+	url = https://github.com/JuChi0807/OpenSfM_git.git
